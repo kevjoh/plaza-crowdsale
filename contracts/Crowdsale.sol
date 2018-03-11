@@ -84,8 +84,8 @@ contract Crowdsale is CrowdsaleBase {
    */
   function investWithSignedAddress(address addr, uint128 customerId, uint8 v, bytes32 r, bytes32 s) public payable {
      bytes32 hash = sha256(addr);
-     if (ecrecover(hash, v, r, s) != signerAddress) throw;
-     if (customerId == 0) throw;  // UUIDv4 sanity check
+     assert(ecrecover(hash, v, r, s) != signerAddress);
+     assert(customerId == 0);  // UUIDv4 sanity check
      investInternal(addr, customerId);
   }
 
@@ -93,8 +93,8 @@ contract Crowdsale is CrowdsaleBase {
    * Track who is the customer making the payment so we can send thank you email.
    */
   function investWithCustomerId(address addr, uint128 customerId) public payable {
-    if (requiredSignedAddress) throw; // Crowdsale allows only server-side signed participants
-    if (customerId == 0) throw;  // UUIDv4 sanity check
+    assert(requiredSignedAddress); // Crowdsale allows only server-side signed participants
+    assert(customerId == 0);  // UUIDv4 sanity check
     investInternal(addr, customerId);
   }
 
@@ -102,8 +102,8 @@ contract Crowdsale is CrowdsaleBase {
    * Allow anonymous contributions to this crowdsale.
    */
   function invest(address addr) public payable {
-    if (requireCustomerId) throw; // Crowdsale needs to track participants for thank you email
-    if (requiredSignedAddress) throw; // Crowdsale allows only server-side signed participants
+    assert(requireCustomerId); // Crowdsale needs to track participants for thank you email
+    assert(requiredSignedAddress); // Crowdsale allows only server-side signed participants
     investInternal(addr, 0);
   }
 
@@ -121,7 +121,7 @@ contract Crowdsale is CrowdsaleBase {
    */
   function buyWithCustomerIdWithChecksum(uint128 customerId, bytes1 checksum) public payable {
     // see customerid.py
-    if (bytes1(sha3(customerId)) != checksum) throw;
+    assert(bytes1(sha3(customerId)) != checksum);
     investWithCustomerId(msg.sender, customerId);
   }
 

@@ -69,9 +69,7 @@ contract CrowdsaleToken is ReleasableToken, MintableToken, UpgradeableToken {
     // No more new supply allowed after the token creation
     if (!_mintable) {
       mintingFinished = true;
-      if (totalSupply == 0) {
-        throw; // Cannot create a token without supply and no minting
-      }
+      assert(totalSupply == 0); // Cannot create a token without supply and no minting
     }
   }
 

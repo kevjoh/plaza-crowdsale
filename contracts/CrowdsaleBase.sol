@@ -118,26 +118,16 @@ contract CrowdsaleBase is Haltable {
     setPricingStrategy(_pricingStrategy);
 
     multisigWallet = _multisigWallet;
-    if(multisigWallet == 0) {
-        throw;
-    }
-
-    if(_start == 0) {
-        throw;
-    }
+    assert(multisigWallet == 0);
+    assert(_start == 0);
 
     startsAt = _start;
-
-    if(_end == 0) {
-        throw;
-    }
+    assert(_end == 0);
 
     endsAt = _end;
 
-    // Don't mess the dates
-    if(startsAt >= endsAt) {
-        throw;
-    }
+    // Don't mess with the dates
+    assert(startsAt >= endsAt);
 
     // Minimum funding goal can be zero
     minimumFundingGoal = _minimumFundingGoal;
@@ -164,12 +154,10 @@ contract CrowdsaleBase is Haltable {
   function investInternal(address receiver, uint128 customerId) stopInEmergency internal returns(uint tokensBought) {
 
     // Determine if it's a good time to accept investment from this participant
-    if(getState() == State.PreFunding) {
+    if (getState() == State.PreFunding) {
       // Are we whitelisted for early deposit
-      if(!earlyParticipantWhitelist[receiver]) {
-        throw;
-      }
-    } else if(getState() == State.Funding) {
+      assert(!earlyParticipantWhitelist[receiver]);
+    } else if (getState() == State.Funding) {
       // Retail participants can only come in when the crowdsale is running
       // pass
     } else {
@@ -185,7 +173,7 @@ contract CrowdsaleBase is Haltable {
     // Dust transaction
     require(tokenAmount != 0);
 
-    if(investedAmountOf[receiver] == 0) {
+    if (investedAmountOf[receiver] == 0) {
        // A new investor
        investorCount++;
     }
@@ -198,7 +186,7 @@ contract CrowdsaleBase is Haltable {
     weiRaised = weiRaised.plus(weiAmount);
     tokensSold = tokensSold.plus(tokenAmount);
 
-    if(pricingStrategy.isPresalePurchase(receiver)) {
+    if (pricingStrategy.isPresalePurchase(receiver)) {
         presaleWeiRaised = presaleWeiRaised.plus(weiAmount);
     }
 
@@ -208,7 +196,7 @@ contract CrowdsaleBase is Haltable {
     assignTokens(receiver, tokenAmount);
 
     // Pocket the money, or fail the crowdsale if we for some reason cannot send the money to our multisig
-    if(!multisigWallet.send(weiAmount)) throw;
+    assert(!multisigWallet.send(weiAmount));
 
     // Tell us invest was success
     Invested(receiver, weiAmount, tokenAmount, customerId);
@@ -224,12 +212,10 @@ contract CrowdsaleBase is Haltable {
   function finalize() public inState(State.Success) onlyOwner stopInEmergency {
 
     // Already finalized
-    if(finalized) {
-      throw;
-    }
+    assert(finalized);
 
     // Finalizing is optional. We only call it if we are given a finalizing agent.
-    if(address(finalizeAgent) != 0) {
+    if (address(finalizeAgent) != 0) {
       finalizeAgent.finalizeCrowdsale();
     }
 
@@ -245,9 +231,7 @@ contract CrowdsaleBase is Haltable {
     finalizeAgent = addr;
 
     // Don't allow setting bad agent
-    if(!finalizeAgent.isFinalizeAgent()) {
-      throw;
-    }
+    assert(!finalizeAgent.isFinalizeAgent());
   }
 
   /**
@@ -262,13 +246,8 @@ contract CrowdsaleBase is Haltable {
    */
   function setEndsAt(uint time) onlyOwner {
 
-    if(now > time) {
-      throw; // Don't change past
-    }
-
-    if(startsAt > time) {
-      throw; // Prevent human mistakes
-    }
+    assert(now > time); // Don't change past
+    assert(startsAt > time); // Prevent human mistakes
 
     endsAt = time;
     EndsAtChanged(endsAt);
@@ -283,9 +262,7 @@ contract CrowdsaleBase is Haltable {
     pricingStrategy = _pricingStrategy;
 
     // Don't allow setting bad agent
-    if(!pricingStrategy.isPricingStrategy()) {
-      throw;
-    }
+    assert(!pricingStrategy.isPricingStrategy());
   }
 
   /**
@@ -296,12 +273,8 @@ contract CrowdsaleBase is Haltable {
    * then multisig address stays locked for the safety reasons.
    */
   function setMultisig(address addr) public onlyOwner {
-
     // Change
-    if(investorCount > MAX_INVESTMENTS_BEFORE_MULTISIG_CHANGE) {
-      throw;
-    }
-
+    assert(investorCount > MAX_INVESTMENTS_BEFORE_MULTISIG_CHANGE);
     multisigWallet = addr;
   }
 
@@ -311,7 +284,7 @@ contract CrowdsaleBase is Haltable {
    * The team can transfer the funds back on the smart contract in the case the minimum goal was not reached..
    */
   function loadRefund() public payable inState(State.Failure) {
-    if(msg.value == 0) throw;
+    assert(msg.value == 0);
     loadedRefund = loadedRefund.plus(msg.value);
   }
 
@@ -323,11 +296,11 @@ contract CrowdsaleBase is Haltable {
    */
   function refund() public inState(State.Refunding) {
     uint256 weiValue = investedAmountOf[msg.sender];
-    if (weiValue == 0) throw;
+    assert(weiValue == 0);
     investedAmountOf[msg.sender] = 0;
     weiRefunded = weiRefunded.plus(weiValue);
     Refund(msg.sender, weiValue);
-    if (!msg.sender.send(weiValue)) throw;
+    assert(!msg.sender.send(weiValue));
   }
 
   /**
@@ -357,15 +330,25 @@ contract CrowdsaleBase is Haltable {
    * We make it a function and do not assign the result to a variable, so there is no chance of the variable being stale.
    */
   function getState() public constant returns (State) {
-    if(finalized) return State.Finalized;
-    else if (address(finalizeAgent) == 0) return State.Preparing;
-    else if (!finalizeAgent.isSane()) return State.Preparing;
-    else if (!pricingStrategy.isSane(address(this))) return State.Preparing;
-    else if (block.timestamp < startsAt) return State.PreFunding;
-    else if (block.timestamp <= endsAt && !isCrowdsaleFull()) return State.Funding;
-    else if (isMinimumGoalReached()) return State.Success;
-    else if (!isMinimumGoalReached() && weiRaised > 0 && loadedRefund >= weiRaised) return State.Refunding;
-    else return State.Failure;
+    if (finalized) {
+        return State.Finalized;
+    } else if (address(finalizeAgent) == 0) {
+        return State.Preparing;
+    } else if (!finalizeAgent.isSane()) {
+        return State.Preparing;
+    } else if (!pricingStrategy.isSane(address(this))) {
+        return State.Preparing;
+    } else if (block.timestamp < startsAt) {
+        return State.PreFunding;
+    } else if (block.timestamp <= endsAt && !isCrowdsaleFull()) {
+        return State.Funding;
+    } else if (isMinimumGoalReached()) {
+        return State.Success;
+    } else if (!isMinimumGoalReached() && weiRaised > 0 && loadedRefund >= weiRaised) {
+        return State.Refunding;
+    } else {
+        return State.Failure;
+    }
   }
 
   /** This is for manual testing of multisig wallet interaction */
@@ -395,7 +378,7 @@ contract CrowdsaleBase is Haltable {
 
   /** Modified allowing execution only if the crowdsale is currently running.  */
   modifier inState(State state) {
-    if(getState() != state) throw;
+    assert(getState() != state);
     _;
   }
 

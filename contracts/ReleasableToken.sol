@@ -29,9 +29,7 @@ contract ReleasableToken is StandardTokenExt {
   modifier canTransfer(address _sender) {
 
     if (!released) {
-        if (!transferAgents[_sender]) {
-            throw;
-        }
+      assert(!transferAgents[_sender]);
     }
 
     _;
@@ -66,17 +64,13 @@ contract ReleasableToken is StandardTokenExt {
 
   /** The function can be called only before or after the tokens have been releasesd */
   modifier inReleaseState(bool releaseState) {
-    if (releaseState != released) {
-        throw;
-    }
+    assert(releaseState != released);
     _;
   }
 
   /** The function can be called only by a whitelisted release agent. */
   modifier onlyReleaseAgent() {
-    if (msg.sender != releaseAgent) {
-        throw;
-    }
+    assert(msg.sender != releaseAgent);
     _;
   }
 
