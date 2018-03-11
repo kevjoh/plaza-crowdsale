@@ -6,14 +6,12 @@
 
 pragma solidity ^0.4.19;
 
-import "zeppelin-solidity/contracts/ownership/Ownable.sol";
-import "./StandardToken.sol";
-
+import "./StandardTokenExt.sol";
 
 /**
  * Define interface for releasing the token transfer after a successful crowdsale.
  */
-contract ReleasableToken is ERC20, Ownable {
+contract ReleasableToken is StandardTokenExt {
 
   /* The finalizer contract that allows unlift the transfer limits on this token */
   address public releaseAgent;
@@ -30,8 +28,8 @@ contract ReleasableToken is ERC20, Ownable {
    */
   modifier canTransfer(address _sender) {
 
-    if(!released) {
-        if(!transferAgents[_sender]) {
+    if (!released) {
+        if (!transferAgents[_sender]) {
             throw;
         }
     }
@@ -68,7 +66,7 @@ contract ReleasableToken is ERC20, Ownable {
 
   /** The function can be called only before or after the tokens have been releasesd */
   modifier inReleaseState(bool releaseState) {
-    if(releaseState != released) {
+    if (releaseState != released) {
         throw;
     }
     _;
@@ -76,7 +74,7 @@ contract ReleasableToken is ERC20, Ownable {
 
   /** The function can be called only by a whitelisted release agent. */
   modifier onlyReleaseAgent() {
-    if(msg.sender != releaseAgent) {
+    if (msg.sender != releaseAgent) {
         throw;
     }
     _;

@@ -15,8 +15,6 @@ pragma solidity ^0.4.19;
  */
 contract FinalizeAgent {
 
-  bool public reservedTokensAreDistributed = false;
-
   function isFinalizeAgent() public constant returns(bool) {
     return true;
   }
@@ -27,8 +25,6 @@ contract FinalizeAgent {
    * unless the finalizer has been set up properly.
    */
   function isSane() public constant returns (bool);
-
-  function distributeReservedTokens(uint reservedTokensDistributionBatch);
 
   /** Called once by crowdsale finalize() if the sale was success. */
   function finalizeCrowdsale();
