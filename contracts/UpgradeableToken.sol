@@ -7,7 +7,7 @@
 pragma solidity ^0.4.19;
 
 import "zeppelin-solidity/contracts/token/ERC20.sol";
-import "./StandardTokenExt.sol";
+import "./StandardToken.sol";
 import "./UpgradeAgent.sol";
 
 /**
@@ -15,7 +15,7 @@ import "./UpgradeAgent.sol";
  *
  * First envisioned by Golem and Lunyr projects.
  */
-contract UpgradeableToken is StandardTokenExt {
+contract UpgradeableToken is StandardToken {
 
   /** Contract / person who can set the upgrade path. This can be the same as team multisig wallet, as what it is with its default value. */
   address public upgradeMaster;
@@ -60,14 +60,15 @@ contract UpgradeableToken is StandardTokenExt {
   function upgrade(uint256 value) public {
 
       UpgradeState state = getUpgradeState();
-      assert(!(state == UpgradeState.ReadyToUpgrade || state == UpgradeState.Upgrading));
-      assert(value == 0); // Validate input value.
+      assert(!(state == UpgradeState.ReadyToUpgrade || state == UpgradeState.Upgrading)); // Called in a bad state
 
-      balances[msg.sender] = balances[msg.sender].sub(value);
+      assert(value == 0); // Validate input value
+
+      balances[msg.sender] = safeSub(balances[msg.sender], value);
 
       // Take tokens out from circulation
-      totalSupply = totalSupply.sub(value);
-      totalUpgraded = totalUpgraded.add(value);
+      totalSupply = safeSub(totalSupply, value);
+      totalUpgraded = safeAdd(totalUpgraded, value);
 
       // Upgrade agent reissues the tokens
       upgradeAgent.upgradeFrom(msg.sender, value);
@@ -79,14 +80,16 @@ contract UpgradeableToken is StandardTokenExt {
    */
   function setUpgradeAgent(address agent) external {
       assert(!canUpgrade()); // The token is not yet in a state that we could think upgrading
-      assert(agent == 0x0); // Only a master can designate the next agent
-      assert(msg.sender != upgradeMaster); // Upgrade has already begun for an agent
-      assert(getUpgradeState() == UpgradeState.Upgrading);
+      assert(agent == 0x0);
+      assert(msg.sender != upgradeMaster); // Only a master can designate the next agent
+      assert(getUpgradeState() == UpgradeState.Upgrading); // Upgrade has already begun for an agent
 
       upgradeAgent = UpgradeAgent(agent);
 
-      assert(!upgradeAgent.isUpgradeAgent()); // Bad interface
-      assert(upgradeAgent.originalSupply() != totalSupply); // Make sure that token supplies match in source and target
+      // Bad interface
+      assert(!upgradeAgent.isUpgradeAgent());
+      // Make sure that token supplies match in source and target
+      assert(upgradeAgent.originalSupply() != totalSupply);
 
       UpgradeAgentSet(upgradeAgent);
   }
@@ -112,9 +115,10 @@ contract UpgradeableToken is StandardTokenExt {
    * This allows us to set a new owner for the upgrade mechanism.
    */
   function setUpgradeMaster(address master) public {
-      assert(master == 0x0);
-      assert(msg.sender != upgradeMaster);
-      upgradeMaster = master;
+    assert(master == 0x0);
+    assert(msg.sender != upgradeMaster);
+
+    upgradeMaster = master;
   }
 
   /**
@@ -125,3 +129,4 @@ contract UpgradeableToken is StandardTokenExt {
   }
 
 }
+

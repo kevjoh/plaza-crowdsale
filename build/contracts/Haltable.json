@@ -79,24 +79,24 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610418806100536000396000f30060606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635ed7ca5b146100725780638da5cb5b14610087578063b9b8af0b146100dc578063cb3e64fd14610109578063f2fde38b1461011e575b600080fd5b341561007d57600080fd5b610085610157565b005b341561009257600080fd5b61009a6101cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100e757600080fd5b6100ef6101f4565b604051808215151515815260200191505060405180910390f35b341561011457600080fd5b61011c610207565b005b341561012957600080fd5b610155600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610297565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101b257600080fd5b6001600060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561026257600080fd5b600060149054906101000a900460ff1615151561027b57fe5b60008060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102f257600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561032e57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582091d04219d883c6689b1605741bccef20ba8d0c9cae124cfb13504c720e738fef0029",
-  "deployedBytecode": "0x60606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635ed7ca5b146100725780638da5cb5b14610087578063b9b8af0b146100dc578063cb3e64fd14610109578063f2fde38b1461011e575b600080fd5b341561007d57600080fd5b610085610157565b005b341561009257600080fd5b61009a6101cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100e757600080fd5b6100ef6101f4565b604051808215151515815260200191505060405180910390f35b341561011457600080fd5b61011c610207565b005b341561012957600080fd5b610155600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610297565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101b257600080fd5b6001600060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561026257600080fd5b600060149054906101000a900460ff1615151561027b57fe5b60008060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102f257600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561032e57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582091d04219d883c6689b1605741bccef20ba8d0c9cae124cfb13504c720e738fef0029",
-  "sourceMap": "552:548:5:-;;;509:10:17;501:5;;:18;;;;;;;;;;;;;;;;;;552:548:5;;;;;;",
-  "deployedSourceMap": "552:548:5:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;886:59;;;;;;;;;;;;;;238:20:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;585:18:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1019:78;;;;;;;;;;;;;;834:169:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;886:59:5;654:5:17;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;936:4:5;927:6;;:13;;;;;;;;;;;;;;;;;;886:59::o;238:20:17:-;;;;;;;;;;;;;:::o;585:18:5:-;;;;;;;;;;;;;:::o;1019:78::-;654:5:17;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;801:6:5;;;;;;;;;;;800:7;793:15;;;;;;1087:5;1078:6;;:14;;;;;;;;;;;;;;;;;;1019:78::o;834:169:17:-;654:5;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;930:1;910:22;;:8;:22;;;;902:31;;;;;;;;967:8;939:37;;960:5;;;;;;;;;;;939:37;;;;;;;;;;;;990:8;982:5;;:16;;;;;;;;;;;;;;;;;;834:169;:::o",
-  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.19;\n\nimport \"zeppelin-solidity/contracts/ownership/Ownable.sol\";\n\n/*\n * Haltable\n *\n * Abstract contract that allows children to implement an\n * emergency stop mechanism. Differs from Pausable by causing a throw when in halt mode.\n *\n *\n * Originally envisioned in FirstBlood ICO contract.\n */\ncontract Haltable is Ownable {\n  bool public halted;\n\n  modifier stopInEmergency {\n    assert(halted);\n    _;\n  }\n\n  modifier stopNonOwnersInEmergency {\n    assert(halted && msg.sender != owner);\n    _;\n  }\n\n  modifier onlyInEmergency {\n    assert(!halted);\n    _;\n  }\n\n  // called by the owner on emergency, triggers stopped state\n  function halt() external onlyOwner {\n    halted = true;\n  }\n\n  // called by the owner on end of emergency, returns to normal state\n  function unhalt() external onlyOwner onlyInEmergency {\n    halted = false;\n  }\n\n}",
+  "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610418806100536000396000f30060606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635ed7ca5b146100725780638da5cb5b14610087578063b9b8af0b146100dc578063cb3e64fd14610109578063f2fde38b1461011e575b600080fd5b341561007d57600080fd5b610085610157565b005b341561009257600080fd5b61009a6101cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100e757600080fd5b6100ef6101f4565b604051808215151515815260200191505060405180910390f35b341561011457600080fd5b61011c610207565b005b341561012957600080fd5b610155600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610297565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101b257600080fd5b6001600060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561026257600080fd5b600060149054906101000a900460ff1615151561027b57fe5b60008060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102f257600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561032e57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820863090093eb615342a3de40174e3fb81a8ec53f2551fcdeedcd598271e83e2bd0029",
+  "deployedBytecode": "0x60606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635ed7ca5b146100725780638da5cb5b14610087578063b9b8af0b146100dc578063cb3e64fd14610109578063f2fde38b1461011e575b600080fd5b341561007d57600080fd5b610085610157565b005b341561009257600080fd5b61009a6101cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100e757600080fd5b6100ef6101f4565b604051808215151515815260200191505060405180910390f35b341561011457600080fd5b61011c610207565b005b341561012957600080fd5b610155600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610297565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101b257600080fd5b6001600060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561026257600080fd5b600060149054906101000a900460ff1615151561027b57fe5b60008060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102f257600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561032e57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820863090093eb615342a3de40174e3fb81a8ec53f2551fcdeedcd598271e83e2bd0029",
+  "sourceMap": "552:548:4:-;;;509:10:16;501:5;;:18;;;;;;;;;;;;;;;;;;552:548:4;;;;;;",
+  "deployedSourceMap": "552:548:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;886:59;;;;;;;;;;;;;;238:20:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;585:18:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1019:78;;;;;;;;;;;;;;834:169:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;886:59:4;654:5:16;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;936:4:4;927:6;;:13;;;;;;;;;;;;;;;;;;886:59::o;238:20:16:-;;;;;;;;;;;;;:::o;585:18:4:-;;;;;;;;;;;;;:::o;1019:78::-;654:5:16;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;801:6:4;;;;;;;;;;;800:7;793:15;;;;;;1087:5;1078:6;;:14;;;;;;;;;;;;;;;;;;1019:78::o;834:169:16:-;654:5;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;930:1;910:22;;:8;:22;;;;902:31;;;;;;;;967:8;939:37;;960:5;;;;;;;;;;;939:37;;;;;;;;;;;;990:8;982:5;;:16;;;;;;;;;;;;;;;;;;834:169;:::o",
+  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.19;\n\nimport \"zeppelin-solidity/contracts/ownership/Ownable.sol\";\n\n/*\n * Haltable\n *\n * Abstract contract that allows children to implement an\n * emergency stop mechanism. Differs from Pausable by causing a throw when in halt mode.\n *\n *\n * Originally envisioned in FirstBlood ICO contract.\n */\ncontract Haltable is Ownable {\n  bool public halted;\n\n  modifier stopInEmergency {\n    assert(halted);\n    _;\n  }\n\n  modifier stopNonOwnersInEmergency {\n    assert(halted && msg.sender != owner);\n    _;\n  }\n\n  modifier onlyInEmergency {\n    assert(!halted);\n    _;\n  }\n\n  // called by the owner on emergency, triggers stopped state\n  function halt() external onlyOwner {\n    halted = true;\n  }\n\n  // called by the owner on end of emergency, returns to normal state\n  function unhalt() external onlyOwner onlyInEmergency {\n    halted = false;\n  }\n\n}\n",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/Haltable.sol",
   "ast": {
     "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/Haltable.sol",
     "exportedSymbols": {
       "Haltable": [
-        1266
+        1774
       ]
     },
-    "id": 1267,
+    "id": 1775,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1208,
+        "id": 1716,
         "literals": [
           "solidity",
           "^",
@@ -104,16 +104,16 @@
           ".19"
         ],
         "nodeType": "PragmaDirective",
-        "src": "237:24:5"
+        "src": "237:24:4"
       },
       {
         "absolutePath": "zeppelin-solidity/contracts/ownership/Ownable.sol",
         "file": "zeppelin-solidity/contracts/ownership/Ownable.sol",
-        "id": 1209,
+        "id": 1717,
         "nodeType": "ImportDirective",
-        "scope": 1267,
-        "sourceUnit": 2551,
-        "src": "263:59:5",
+        "scope": 1775,
+        "sourceUnit": 3696,
+        "src": "263:59:4",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -123,42 +123,42 @@
             "arguments": [],
             "baseName": {
               "contractScope": null,
-              "id": 1210,
+              "id": 1718,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2550,
-              "src": "573:7:5",
+              "referencedDeclaration": 3695,
+              "src": "573:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$2550",
+                "typeIdentifier": "t_contract$_Ownable_$3695",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 1211,
+            "id": 1719,
             "nodeType": "InheritanceSpecifier",
-            "src": "573:7:5"
+            "src": "573:7:4"
           }
         ],
         "contractDependencies": [
-          2550
+          3695
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1266,
+        "id": 1774,
         "linearizedBaseContracts": [
-          1266,
-          2550
+          1774,
+          3695
         ],
         "name": "Haltable",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1213,
+            "id": 1721,
             "name": "halted",
             "nodeType": "VariableDeclaration",
-            "scope": 1266,
-            "src": "585:18:5",
+            "scope": 1774,
+            "src": "585:18:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -166,10 +166,10 @@
               "typeString": "bool"
             },
             "typeName": {
-              "id": 1212,
+              "id": 1720,
               "name": "bool",
               "nodeType": "ElementaryTypeName",
-              "src": "585:4:5",
+              "src": "585:4:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_bool",
                 "typeString": "bool"
@@ -180,9 +180,9 @@
           },
           {
             "body": {
-              "id": 1220,
+              "id": 1728,
               "nodeType": "Block",
-              "src": "633:32:5",
+              "src": "633:32:4",
               "statements": [
                 {
                   "expression": {
@@ -190,12 +190,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1216,
+                        "id": 1724,
                         "name": "halted",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1213,
-                        "src": "646:6:5",
+                        "referencedDeclaration": 1721,
+                        "src": "646:6:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -209,18 +209,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 1215,
+                      "id": 1723,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2957,
-                      "src": "639:6:5",
+                      "referencedDeclaration": 3770,
+                      "src": "639:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 1217,
+                    "id": 1725,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -228,40 +228,40 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "639:14:5",
+                    "src": "639:14:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1218,
+                  "id": 1726,
                   "nodeType": "ExpressionStatement",
-                  "src": "639:14:5"
+                  "src": "639:14:4"
                 },
                 {
-                  "id": 1219,
+                  "id": 1727,
                   "nodeType": "PlaceholderStatement",
-                  "src": "659:1:5"
+                  "src": "659:1:4"
                 }
               ]
             },
-            "id": 1221,
+            "id": 1729,
             "name": "stopInEmergency",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1214,
+              "id": 1722,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "633:0:5"
+              "src": "633:0:4"
             },
-            "src": "608:57:5",
+            "src": "608:57:4",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 1233,
+              "id": 1741,
               "nodeType": "Block",
-              "src": "703:55:5",
+              "src": "703:55:4",
               "statements": [
                 {
                   "expression": {
@@ -273,19 +273,19 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 1229,
+                        "id": 1737,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 1224,
+                          "id": 1732,
                           "name": "halted",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1213,
-                          "src": "716:6:5",
+                          "referencedDeclaration": 1721,
+                          "src": "716:6:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -299,7 +299,7 @@
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 1228,
+                          "id": 1736,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -308,18 +308,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 1225,
+                              "id": 1733,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2966,
-                              "src": "726:3:5",
+                              "referencedDeclaration": 3779,
+                              "src": "726:3:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 1226,
+                            "id": 1734,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -327,7 +327,7 @@
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "726:10:5",
+                            "src": "726:10:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -337,24 +337,24 @@
                           "operator": "!=",
                           "rightExpression": {
                             "argumentTypes": null,
-                            "id": 1227,
+                            "id": 1735,
                             "name": "owner",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2498,
-                            "src": "740:5:5",
+                            "referencedDeclaration": 3643,
+                            "src": "740:5:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
-                          "src": "726:19:5",
+                          "src": "726:19:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "716:29:5",
+                        "src": "716:29:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -368,18 +368,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 1223,
+                      "id": 1731,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2957,
-                      "src": "709:6:5",
+                      "referencedDeclaration": 3770,
+                      "src": "709:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 1230,
+                    "id": 1738,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -387,40 +387,40 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "709:37:5",
+                    "src": "709:37:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1231,
+                  "id": 1739,
                   "nodeType": "ExpressionStatement",
-                  "src": "709:37:5"
+                  "src": "709:37:4"
                 },
                 {
-                  "id": 1232,
+                  "id": 1740,
                   "nodeType": "PlaceholderStatement",
-                  "src": "752:1:5"
+                  "src": "752:1:4"
                 }
               ]
             },
-            "id": 1234,
+            "id": 1742,
             "name": "stopNonOwnersInEmergency",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1222,
+              "id": 1730,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "703:0:5"
+              "src": "703:0:4"
             },
-            "src": "669:89:5",
+            "src": "669:89:4",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 1242,
+              "id": 1750,
               "nodeType": "Block",
-              "src": "787:33:5",
+              "src": "787:33:4",
               "statements": [
                 {
                   "expression": {
@@ -428,7 +428,7 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1238,
+                        "id": 1746,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -436,15 +436,15 @@
                         "nodeType": "UnaryOperation",
                         "operator": "!",
                         "prefix": true,
-                        "src": "800:7:5",
+                        "src": "800:7:4",
                         "subExpression": {
                           "argumentTypes": null,
-                          "id": 1237,
+                          "id": 1745,
                           "name": "halted",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1213,
-                          "src": "801:6:5",
+                          "referencedDeclaration": 1721,
+                          "src": "801:6:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -463,18 +463,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 1236,
+                      "id": 1744,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2957,
-                      "src": "793:6:5",
+                      "referencedDeclaration": 3770,
+                      "src": "793:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 1239,
+                    "id": 1747,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -482,57 +482,57 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "793:15:5",
+                    "src": "793:15:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1240,
+                  "id": 1748,
                   "nodeType": "ExpressionStatement",
-                  "src": "793:15:5"
+                  "src": "793:15:4"
                 },
                 {
-                  "id": 1241,
+                  "id": 1749,
                   "nodeType": "PlaceholderStatement",
-                  "src": "814:1:5"
+                  "src": "814:1:4"
                 }
               ]
             },
-            "id": 1243,
+            "id": 1751,
             "name": "onlyInEmergency",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1235,
+              "id": 1743,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "787:0:5"
+              "src": "787:0:4"
             },
-            "src": "762:58:5",
+            "src": "762:58:4",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 1252,
+              "id": 1760,
               "nodeType": "Block",
-              "src": "921:24:5",
+              "src": "921:24:4",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1250,
+                    "id": 1758,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 1248,
+                      "id": 1756,
                       "name": "halted",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1213,
-                      "src": "927:6:5",
+                      "referencedDeclaration": 1721,
+                      "src": "927:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -543,14 +543,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 1249,
+                      "id": 1757,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "936:4:5",
+                      "src": "936:4:4",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -558,86 +558,86 @@
                       },
                       "value": "true"
                     },
-                    "src": "927:13:5",
+                    "src": "927:13:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 1251,
+                  "id": 1759,
                   "nodeType": "ExpressionStatement",
-                  "src": "927:13:5"
+                  "src": "927:13:4"
                 }
               ]
             },
-            "id": 1253,
+            "id": 1761,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": [],
-                "id": 1246,
+                "id": 1754,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1245,
+                  "id": 1753,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2524,
-                  "src": "911:9:5",
+                  "referencedDeclaration": 3669,
+                  "src": "911:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "911:9:5"
+                "src": "911:9:4"
               }
             ],
             "name": "halt",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1244,
+              "id": 1752,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "899:2:5"
+              "src": "899:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1247,
+              "id": 1755,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "921:0:5"
+              "src": "921:0:4"
             },
-            "scope": 1266,
-            "src": "886:59:5",
+            "scope": 1774,
+            "src": "886:59:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 1264,
+              "id": 1772,
               "nodeType": "Block",
-              "src": "1072:25:5",
+              "src": "1072:25:4",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1262,
+                    "id": 1770,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 1260,
+                      "id": 1768,
                       "name": "halted",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1213,
-                      "src": "1078:6:5",
+                      "referencedDeclaration": 1721,
+                      "src": "1078:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -648,14 +648,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "66616c7365",
-                      "id": 1261,
+                      "id": 1769,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "1087:5:5",
+                      "src": "1087:5:4",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -663,102 +663,102 @@
                       },
                       "value": "false"
                     },
-                    "src": "1078:14:5",
+                    "src": "1078:14:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 1263,
+                  "id": 1771,
                   "nodeType": "ExpressionStatement",
-                  "src": "1078:14:5"
+                  "src": "1078:14:4"
                 }
               ]
             },
-            "id": 1265,
+            "id": 1773,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": [],
-                "id": 1256,
+                "id": 1764,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1255,
+                  "id": 1763,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2524,
-                  "src": "1046:9:5",
+                  "referencedDeclaration": 3669,
+                  "src": "1046:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1046:9:5"
+                "src": "1046:9:4"
               },
               {
                 "arguments": [],
-                "id": 1258,
+                "id": 1766,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1257,
+                  "id": 1765,
                   "name": "onlyInEmergency",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1243,
-                  "src": "1056:15:5",
+                  "referencedDeclaration": 1751,
+                  "src": "1056:15:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1056:15:5"
+                "src": "1056:15:4"
               }
             ],
             "name": "unhalt",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1254,
+              "id": 1762,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1034:2:5"
+              "src": "1034:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1259,
+              "id": 1767,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1072:0:5"
+              "src": "1072:0:4"
             },
-            "scope": 1266,
-            "src": "1019:78:5",
+            "scope": 1774,
+            "src": "1019:78:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1267,
-        "src": "552:548:5"
+        "scope": 1775,
+        "src": "552:548:4"
       }
     ],
-    "src": "237:863:5"
+    "src": "237:864:4"
   },
   "legacyAST": {
     "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/Haltable.sol",
     "exportedSymbols": {
       "Haltable": [
-        1266
+        1774
       ]
     },
-    "id": 1267,
+    "id": 1775,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1208,
+        "id": 1716,
         "literals": [
           "solidity",
           "^",
@@ -766,16 +766,16 @@
           ".19"
         ],
         "nodeType": "PragmaDirective",
-        "src": "237:24:5"
+        "src": "237:24:4"
       },
       {
         "absolutePath": "zeppelin-solidity/contracts/ownership/Ownable.sol",
         "file": "zeppelin-solidity/contracts/ownership/Ownable.sol",
-        "id": 1209,
+        "id": 1717,
         "nodeType": "ImportDirective",
-        "scope": 1267,
-        "sourceUnit": 2551,
-        "src": "263:59:5",
+        "scope": 1775,
+        "sourceUnit": 3696,
+        "src": "263:59:4",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -785,42 +785,42 @@
             "arguments": [],
             "baseName": {
               "contractScope": null,
-              "id": 1210,
+              "id": 1718,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2550,
-              "src": "573:7:5",
+              "referencedDeclaration": 3695,
+              "src": "573:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$2550",
+                "typeIdentifier": "t_contract$_Ownable_$3695",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 1211,
+            "id": 1719,
             "nodeType": "InheritanceSpecifier",
-            "src": "573:7:5"
+            "src": "573:7:4"
           }
         ],
         "contractDependencies": [
-          2550
+          3695
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1266,
+        "id": 1774,
         "linearizedBaseContracts": [
-          1266,
-          2550
+          1774,
+          3695
         ],
         "name": "Haltable",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1213,
+            "id": 1721,
             "name": "halted",
             "nodeType": "VariableDeclaration",
-            "scope": 1266,
-            "src": "585:18:5",
+            "scope": 1774,
+            "src": "585:18:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -828,10 +828,10 @@
               "typeString": "bool"
             },
             "typeName": {
-              "id": 1212,
+              "id": 1720,
               "name": "bool",
               "nodeType": "ElementaryTypeName",
-              "src": "585:4:5",
+              "src": "585:4:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_bool",
                 "typeString": "bool"
@@ -842,9 +842,9 @@
           },
           {
             "body": {
-              "id": 1220,
+              "id": 1728,
               "nodeType": "Block",
-              "src": "633:32:5",
+              "src": "633:32:4",
               "statements": [
                 {
                   "expression": {
@@ -852,12 +852,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1216,
+                        "id": 1724,
                         "name": "halted",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1213,
-                        "src": "646:6:5",
+                        "referencedDeclaration": 1721,
+                        "src": "646:6:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -871,18 +871,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 1215,
+                      "id": 1723,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2957,
-                      "src": "639:6:5",
+                      "referencedDeclaration": 3770,
+                      "src": "639:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 1217,
+                    "id": 1725,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -890,40 +890,40 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "639:14:5",
+                    "src": "639:14:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1218,
+                  "id": 1726,
                   "nodeType": "ExpressionStatement",
-                  "src": "639:14:5"
+                  "src": "639:14:4"
                 },
                 {
-                  "id": 1219,
+                  "id": 1727,
                   "nodeType": "PlaceholderStatement",
-                  "src": "659:1:5"
+                  "src": "659:1:4"
                 }
               ]
             },
-            "id": 1221,
+            "id": 1729,
             "name": "stopInEmergency",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1214,
+              "id": 1722,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "633:0:5"
+              "src": "633:0:4"
             },
-            "src": "608:57:5",
+            "src": "608:57:4",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 1233,
+              "id": 1741,
               "nodeType": "Block",
-              "src": "703:55:5",
+              "src": "703:55:4",
               "statements": [
                 {
                   "expression": {
@@ -935,19 +935,19 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 1229,
+                        "id": 1737,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 1224,
+                          "id": 1732,
                           "name": "halted",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1213,
-                          "src": "716:6:5",
+                          "referencedDeclaration": 1721,
+                          "src": "716:6:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -961,7 +961,7 @@
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 1228,
+                          "id": 1736,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -970,18 +970,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 1225,
+                              "id": 1733,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2966,
-                              "src": "726:3:5",
+                              "referencedDeclaration": 3779,
+                              "src": "726:3:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 1226,
+                            "id": 1734,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -989,7 +989,7 @@
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "726:10:5",
+                            "src": "726:10:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -999,24 +999,24 @@
                           "operator": "!=",
                           "rightExpression": {
                             "argumentTypes": null,
-                            "id": 1227,
+                            "id": 1735,
                             "name": "owner",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2498,
-                            "src": "740:5:5",
+                            "referencedDeclaration": 3643,
+                            "src": "740:5:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
-                          "src": "726:19:5",
+                          "src": "726:19:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "716:29:5",
+                        "src": "716:29:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1030,18 +1030,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 1223,
+                      "id": 1731,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2957,
-                      "src": "709:6:5",
+                      "referencedDeclaration": 3770,
+                      "src": "709:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 1230,
+                    "id": 1738,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1049,40 +1049,40 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "709:37:5",
+                    "src": "709:37:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1231,
+                  "id": 1739,
                   "nodeType": "ExpressionStatement",
-                  "src": "709:37:5"
+                  "src": "709:37:4"
                 },
                 {
-                  "id": 1232,
+                  "id": 1740,
                   "nodeType": "PlaceholderStatement",
-                  "src": "752:1:5"
+                  "src": "752:1:4"
                 }
               ]
             },
-            "id": 1234,
+            "id": 1742,
             "name": "stopNonOwnersInEmergency",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1222,
+              "id": 1730,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "703:0:5"
+              "src": "703:0:4"
             },
-            "src": "669:89:5",
+            "src": "669:89:4",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 1242,
+              "id": 1750,
               "nodeType": "Block",
-              "src": "787:33:5",
+              "src": "787:33:4",
               "statements": [
                 {
                   "expression": {
@@ -1090,7 +1090,7 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1238,
+                        "id": 1746,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1098,15 +1098,15 @@
                         "nodeType": "UnaryOperation",
                         "operator": "!",
                         "prefix": true,
-                        "src": "800:7:5",
+                        "src": "800:7:4",
                         "subExpression": {
                           "argumentTypes": null,
-                          "id": 1237,
+                          "id": 1745,
                           "name": "halted",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1213,
-                          "src": "801:6:5",
+                          "referencedDeclaration": 1721,
+                          "src": "801:6:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -1125,18 +1125,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 1236,
+                      "id": 1744,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2957,
-                      "src": "793:6:5",
+                      "referencedDeclaration": 3770,
+                      "src": "793:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 1239,
+                    "id": 1747,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1144,57 +1144,57 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "793:15:5",
+                    "src": "793:15:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1240,
+                  "id": 1748,
                   "nodeType": "ExpressionStatement",
-                  "src": "793:15:5"
+                  "src": "793:15:4"
                 },
                 {
-                  "id": 1241,
+                  "id": 1749,
                   "nodeType": "PlaceholderStatement",
-                  "src": "814:1:5"
+                  "src": "814:1:4"
                 }
               ]
             },
-            "id": 1243,
+            "id": 1751,
             "name": "onlyInEmergency",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1235,
+              "id": 1743,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "787:0:5"
+              "src": "787:0:4"
             },
-            "src": "762:58:5",
+            "src": "762:58:4",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 1252,
+              "id": 1760,
               "nodeType": "Block",
-              "src": "921:24:5",
+              "src": "921:24:4",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1250,
+                    "id": 1758,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 1248,
+                      "id": 1756,
                       "name": "halted",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1213,
-                      "src": "927:6:5",
+                      "referencedDeclaration": 1721,
+                      "src": "927:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -1205,14 +1205,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 1249,
+                      "id": 1757,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "936:4:5",
+                      "src": "936:4:4",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1220,86 +1220,86 @@
                       },
                       "value": "true"
                     },
-                    "src": "927:13:5",
+                    "src": "927:13:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 1251,
+                  "id": 1759,
                   "nodeType": "ExpressionStatement",
-                  "src": "927:13:5"
+                  "src": "927:13:4"
                 }
               ]
             },
-            "id": 1253,
+            "id": 1761,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": [],
-                "id": 1246,
+                "id": 1754,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1245,
+                  "id": 1753,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2524,
-                  "src": "911:9:5",
+                  "referencedDeclaration": 3669,
+                  "src": "911:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "911:9:5"
+                "src": "911:9:4"
               }
             ],
             "name": "halt",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1244,
+              "id": 1752,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "899:2:5"
+              "src": "899:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1247,
+              "id": 1755,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "921:0:5"
+              "src": "921:0:4"
             },
-            "scope": 1266,
-            "src": "886:59:5",
+            "scope": 1774,
+            "src": "886:59:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 1264,
+              "id": 1772,
               "nodeType": "Block",
-              "src": "1072:25:5",
+              "src": "1072:25:4",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1262,
+                    "id": 1770,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 1260,
+                      "id": 1768,
                       "name": "halted",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1213,
-                      "src": "1078:6:5",
+                      "referencedDeclaration": 1721,
+                      "src": "1078:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -1310,14 +1310,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "66616c7365",
-                      "id": 1261,
+                      "id": 1769,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "1087:5:5",
+                      "src": "1087:5:4",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1325,89 +1325,89 @@
                       },
                       "value": "false"
                     },
-                    "src": "1078:14:5",
+                    "src": "1078:14:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 1263,
+                  "id": 1771,
                   "nodeType": "ExpressionStatement",
-                  "src": "1078:14:5"
+                  "src": "1078:14:4"
                 }
               ]
             },
-            "id": 1265,
+            "id": 1773,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": [],
-                "id": 1256,
+                "id": 1764,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1255,
+                  "id": 1763,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2524,
-                  "src": "1046:9:5",
+                  "referencedDeclaration": 3669,
+                  "src": "1046:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1046:9:5"
+                "src": "1046:9:4"
               },
               {
                 "arguments": [],
-                "id": 1258,
+                "id": 1766,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1257,
+                  "id": 1765,
                   "name": "onlyInEmergency",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1243,
-                  "src": "1056:15:5",
+                  "referencedDeclaration": 1751,
+                  "src": "1056:15:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1056:15:5"
+                "src": "1056:15:4"
               }
             ],
             "name": "unhalt",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1254,
+              "id": 1762,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1034:2:5"
+              "src": "1034:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1259,
+              "id": 1767,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1072:0:5"
+              "src": "1072:0:4"
             },
-            "scope": 1266,
-            "src": "1019:78:5",
+            "scope": 1774,
+            "src": "1019:78:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1267,
-        "src": "552:548:5"
+        "scope": 1775,
+        "src": "552:548:4"
       }
     ],
-    "src": "237:863:5"
+    "src": "237:864:4"
   },
   "compiler": {
     "name": "solc",
@@ -1415,5 +1415,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-11T17:10:53.104Z"
+  "updatedAt": "2018-03-13T07:39:17.664Z"
 }

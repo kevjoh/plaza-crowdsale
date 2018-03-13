@@ -6,7 +6,7 @@
 
 pragma solidity ^0.4.19;
 
-import "./Crowdsale.sol";
+import "./CrowdsaleExt.sol";
 import "./ReleasableToken.sol";
 
 /**
@@ -14,17 +14,20 @@ import "./ReleasableToken.sol";
  *
  * - Token transfer must be manually released by the owner
  */
-contract NullFinalizeAgent is FinalizeAgent {
+contract NullFinalizeAgentExt is FinalizeAgent {
 
-  Crowdsale public crowdsale;
+  CrowdsaleExt public crowdsale;
 
-  function NullFinalizeAgent(Crowdsale _crowdsale) {
+  function NullFinalizeAgentExt(CrowdsaleExt _crowdsale) {
     crowdsale = _crowdsale;
   }
 
   /** Check that we can release the token */
   function isSane() public constant returns (bool) {
     return true;
+  }
+
+  function distributeReservedTokens(uint reservedTokensDistributionBatch) public {
   }
 
   /** Called once by crowdsale finalize() if the sale was success. */

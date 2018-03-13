@@ -6,12 +6,13 @@
 
 pragma solidity ^0.4.19;
 
-import "./StandardTokenExt.sol";
+import "zeppelin-solidity/contracts/token/ERC20.sol";
+import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 
 /**
  * Define interface for releasing the token transfer after a successful crowdsale.
  */
-contract ReleasableToken is StandardTokenExt {
+contract ReleasableToken is ERC20, Ownable {
 
   /* The finalizer contract that allows unlift the transfer limits on this token */
   address public releaseAgent;
