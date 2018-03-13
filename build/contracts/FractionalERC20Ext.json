@@ -236,7 +236,7 @@
         "id": 1707,
         "nodeType": "ImportDirective",
         "scope": 1715,
-        "sourceUnit": 3739,
+        "sourceUnit": 3796,
         "src": "26:53:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -250,10 +250,10 @@
               "id": 1708,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3738,
+              "referencedDeclaration": 3795,
               "src": "174:5:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$3738",
+                "typeIdentifier": "t_contract$_ERC20_$3795",
                 "typeString": "contract ERC20"
               }
             },
@@ -263,8 +263,8 @@
           }
         ],
         "contractDependencies": [
-          3738,
-          3767
+          3795,
+          3824
         ],
         "contractKind": "contract",
         "documentation": "A token that defines fractional units as decimals.",
@@ -272,8 +272,8 @@
         "id": 1714,
         "linearizedBaseContracts": [
           1714,
-          3738,
-          3767
+          3795,
+          3824
         ],
         "name": "FractionalERC20Ext",
         "nodeType": "ContractDefinition",
@@ -364,7 +364,7 @@
         "id": 1707,
         "nodeType": "ImportDirective",
         "scope": 1715,
-        "sourceUnit": 3739,
+        "sourceUnit": 3796,
         "src": "26:53:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -378,10 +378,10 @@
               "id": 1708,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3738,
+              "referencedDeclaration": 3795,
               "src": "174:5:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$3738",
+                "typeIdentifier": "t_contract$_ERC20_$3795",
                 "typeString": "contract ERC20"
               }
             },
@@ -391,8 +391,8 @@
           }
         ],
         "contractDependencies": [
-          3738,
-          3767
+          3795,
+          3824
         ],
         "contractKind": "contract",
         "documentation": "A token that defines fractional units as decimals.",
@@ -400,8 +400,8 @@
         "id": 1714,
         "linearizedBaseContracts": [
           1714,
-          3738,
-          3767
+          3795,
+          3824
         ],
         "name": "FractionalERC20Ext",
         "nodeType": "ContractDefinition",
@@ -471,5 +471,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-13T07:39:17.647Z"
+  "updatedAt": "2018-03-13T08:29:19.102Z"
 }

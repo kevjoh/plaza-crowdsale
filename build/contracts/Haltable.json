@@ -81,8 +81,8 @@
   ],
   "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610418806100536000396000f30060606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635ed7ca5b146100725780638da5cb5b14610087578063b9b8af0b146100dc578063cb3e64fd14610109578063f2fde38b1461011e575b600080fd5b341561007d57600080fd5b610085610157565b005b341561009257600080fd5b61009a6101cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100e757600080fd5b6100ef6101f4565b604051808215151515815260200191505060405180910390f35b341561011457600080fd5b61011c610207565b005b341561012957600080fd5b610155600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610297565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101b257600080fd5b6001600060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561026257600080fd5b600060149054906101000a900460ff1615151561027b57fe5b60008060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102f257600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561032e57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820863090093eb615342a3de40174e3fb81a8ec53f2551fcdeedcd598271e83e2bd0029",
   "deployedBytecode": "0x60606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635ed7ca5b146100725780638da5cb5b14610087578063b9b8af0b146100dc578063cb3e64fd14610109578063f2fde38b1461011e575b600080fd5b341561007d57600080fd5b610085610157565b005b341561009257600080fd5b61009a6101cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100e757600080fd5b6100ef6101f4565b604051808215151515815260200191505060405180910390f35b341561011457600080fd5b61011c610207565b005b341561012957600080fd5b610155600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610297565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101b257600080fd5b6001600060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561026257600080fd5b600060149054906101000a900460ff1615151561027b57fe5b60008060146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102f257600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561032e57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820863090093eb615342a3de40174e3fb81a8ec53f2551fcdeedcd598271e83e2bd0029",
-  "sourceMap": "552:548:4:-;;;509:10:16;501:5;;:18;;;;;;;;;;;;;;;;;;552:548:4;;;;;;",
-  "deployedSourceMap": "552:548:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;886:59;;;;;;;;;;;;;;238:20:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;585:18:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1019:78;;;;;;;;;;;;;;834:169:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;886:59:4;654:5:16;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;936:4:4;927:6;;:13;;;;;;;;;;;;;;;;;;886:59::o;238:20:16:-;;;;;;;;;;;;;:::o;585:18:4:-;;;;;;;;;;;;;:::o;1019:78::-;654:5:16;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;801:6:4;;;;;;;;;;;800:7;793:15;;;;;;1087:5;1078:6;;:14;;;;;;;;;;;;;;;;;;1019:78::o;834:169:16:-;654:5;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;930:1;910:22;;:8;:22;;;;902:31;;;;;;;;967:8;939:37;;960:5;;;;;;;;;;;939:37;;;;;;;;;;;;990:8;982:5;;:16;;;;;;;;;;;;;;;;;;834:169;:::o",
+  "sourceMap": "552:548:4:-;;;509:10:17;501:5;;:18;;;;;;;;;;;;;;;;;;552:548:4;;;;;;",
+  "deployedSourceMap": "552:548:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;886:59;;;;;;;;;;;;;;238:20:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;585:18:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1019:78;;;;;;;;;;;;;;834:169:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;886:59:4;654:5:17;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;936:4:4;927:6;;:13;;;;;;;;;;;;;;;;;;886:59::o;238:20:17:-;;;;;;;;;;;;;:::o;585:18:4:-;;;;;;;;;;;;;:::o;1019:78::-;654:5:17;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;801:6:4;;;;;;;;;;;800:7;793:15;;;;;;1087:5;1078:6;;:14;;;;;;;;;;;;;;;;;;1019:78::o;834:169:17:-;654:5;;;;;;;;;;;640:19;;:10;:19;;;632:28;;;;;;;;930:1;910:22;;:8;:22;;;;902:31;;;;;;;;967:8;939:37;;960:5;;;;;;;;;;;939:37;;;;;;;;;;;;990:8;982:5;;:16;;;;;;;;;;;;;;;;;;834:169;:::o",
   "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.19;\n\nimport \"zeppelin-solidity/contracts/ownership/Ownable.sol\";\n\n/*\n * Haltable\n *\n * Abstract contract that allows children to implement an\n * emergency stop mechanism. Differs from Pausable by causing a throw when in halt mode.\n *\n *\n * Originally envisioned in FirstBlood ICO contract.\n */\ncontract Haltable is Ownable {\n  bool public halted;\n\n  modifier stopInEmergency {\n    assert(halted);\n    _;\n  }\n\n  modifier stopNonOwnersInEmergency {\n    assert(halted && msg.sender != owner);\n    _;\n  }\n\n  modifier onlyInEmergency {\n    assert(!halted);\n    _;\n  }\n\n  // called by the owner on emergency, triggers stopped state\n  function halt() external onlyOwner {\n    halted = true;\n  }\n\n  // called by the owner on end of emergency, returns to normal state\n  function unhalt() external onlyOwner onlyInEmergency {\n    halted = false;\n  }\n\n}\n",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/Haltable.sol",
   "ast": {
@@ -112,7 +112,7 @@
         "id": 1717,
         "nodeType": "ImportDirective",
         "scope": 1775,
-        "sourceUnit": 3696,
+        "sourceUnit": 3753,
         "src": "263:59:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -126,10 +126,10 @@
               "id": 1718,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3695,
+              "referencedDeclaration": 3752,
               "src": "573:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$3695",
+                "typeIdentifier": "t_contract$_Ownable_$3752",
                 "typeString": "contract Ownable"
               }
             },
@@ -139,7 +139,7 @@
           }
         ],
         "contractDependencies": [
-          3695
+          3752
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -147,7 +147,7 @@
         "id": 1774,
         "linearizedBaseContracts": [
           1774,
-          3695
+          3752
         ],
         "name": "Haltable",
         "nodeType": "ContractDefinition",
@@ -213,7 +213,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3770,
+                      "referencedDeclaration": 3827,
                       "src": "639:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -312,7 +312,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3779,
+                              "referencedDeclaration": 3836,
                               "src": "726:3:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -341,7 +341,7 @@
                             "name": "owner",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3643,
+                            "referencedDeclaration": 3700,
                             "src": "740:5:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -372,7 +372,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3770,
+                      "referencedDeclaration": 3827,
                       "src": "709:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -467,7 +467,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3770,
+                      "referencedDeclaration": 3827,
                       "src": "793:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -584,7 +584,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3669,
+                  "referencedDeclaration": 3726,
                   "src": "911:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -689,7 +689,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3669,
+                  "referencedDeclaration": 3726,
                   "src": "1046:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -774,7 +774,7 @@
         "id": 1717,
         "nodeType": "ImportDirective",
         "scope": 1775,
-        "sourceUnit": 3696,
+        "sourceUnit": 3753,
         "src": "263:59:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -788,10 +788,10 @@
               "id": 1718,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3695,
+              "referencedDeclaration": 3752,
               "src": "573:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$3695",
+                "typeIdentifier": "t_contract$_Ownable_$3752",
                 "typeString": "contract Ownable"
               }
             },
@@ -801,7 +801,7 @@
           }
         ],
         "contractDependencies": [
-          3695
+          3752
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -809,7 +809,7 @@
         "id": 1774,
         "linearizedBaseContracts": [
           1774,
-          3695
+          3752
         ],
         "name": "Haltable",
         "nodeType": "ContractDefinition",
@@ -875,7 +875,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3770,
+                      "referencedDeclaration": 3827,
                       "src": "639:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -974,7 +974,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3779,
+                              "referencedDeclaration": 3836,
                               "src": "726:3:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -1003,7 +1003,7 @@
                             "name": "owner",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3643,
+                            "referencedDeclaration": 3700,
                             "src": "740:5:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1034,7 +1034,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3770,
+                      "referencedDeclaration": 3827,
                       "src": "709:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -1129,7 +1129,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3770,
+                      "referencedDeclaration": 3827,
                       "src": "793:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -1246,7 +1246,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3669,
+                  "referencedDeclaration": 3726,
                   "src": "911:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1351,7 +1351,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3669,
+                  "referencedDeclaration": 3726,
                   "src": "1046:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1415,5 +1415,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-13T07:39:17.664Z"
+  "updatedAt": "2018-03-13T08:29:19.102Z"
 }
