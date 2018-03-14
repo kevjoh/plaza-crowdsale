@@ -4,7 +4,7 @@
  * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt
  */
 
-pragma solidity ^0.4.19;
+pragma solidity ^0.4.18;
 
 /**
  * Finalize agent defines what happens at the end of succeseful crowdsale.

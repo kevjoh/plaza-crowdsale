@@ -2,17 +2,12 @@
   "contractName": "FinalizeAgent",
   "abi": [
     {
-      "constant": true,
+      "constant": false,
       "inputs": [],
-      "name": "reservedTokensAreDistributed",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
+      "name": "finalizeCrowdsale",
+      "outputs": [],
       "payable": false,
-      "stateMutability": "view",
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -58,12 +53,17 @@
       "type": "function"
     },
     {
-      "constant": false,
+      "constant": true,
       "inputs": [],
-      "name": "finalizeCrowdsale",
-      "outputs": [],
+      "name": "reservedTokensAreDistributed",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
       "payable": false,
-      "stateMutability": "nonpayable",
+      "stateMutability": "view",
       "type": "function"
     }
   ],
@@ -71,627 +71,381 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.19;\n\n/**\n * Finalize agent defines what happens at the end of succeseful crowdsale.\n *\n * - Allocate tokens for founders, bounties and community\n * - Make tokens transferable\n * - etc.\n */\ncontract FinalizeAgent {\n\n  bool public reservedTokensAreDistributed = false;\n\n  function isFinalizeAgent() public constant returns(bool) {\n    return true;\n  }\n\n  /** Return true if we can run finalizeCrowdsale() properly.\n   *\n   * This is a safety check function that doesn't allow crowdsale to begin\n   * unless the finalizer has been set up properly.\n   */\n  function isSane() public constant returns (bool);\n\n  function distributeReservedTokens(uint reservedTokensDistributionBatch) public;\n\n  /** Called once by crowdsale finalize() if the sale was success. */\n  function finalizeCrowdsale() public;\n\n}",
+  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.18;\n\n/**\n * Finalize agent defines what happens at the end of succeseful crowdsale.\n *\n * - Allocate tokens for founders, bounties and community\n * - Make tokens transferable\n * - etc.\n */\ncontract FinalizeAgent {\n\n  bool public reservedTokensAreDistributed = false;\n\n  function isFinalizeAgent() public constant returns(bool) {\n    return true;\n  }\n\n  /** Return true if we can run finalizeCrowdsale() properly.\n   *\n   * This is a safety check function that doesn't allow crowdsale to begin\n   * unless the finalizer has been set up properly.\n   */\n  function isSane() public constant returns (bool);\n\n  function distributeReservedTokens(uint reservedTokensDistributionBatch) public;\n\n  /** Called once by crowdsale finalize() if the sale was success. */\n  function finalizeCrowdsale() public;\n\n}",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FinalizeAgent.sol",
   "ast": {
-    "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FinalizeAgent.sol",
-    "exportedSymbols": {
-      "FinalizeAgent": [
-        1704
-      ]
+    "attributes": {
+      "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FinalizeAgent.sol",
+      "exportedSymbols": {
+        "FinalizeAgent": [
+          1704
+        ]
+      }
     },
-    "id": 1705,
-    "nodeType": "SourceUnit",
-    "nodes": [
+    "children": [
       {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".18"
+          ]
+        },
         "id": 1679,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".19"
-        ],
-        "nodeType": "PragmaDirective",
+        "name": "PragmaDirective",
         "src": "237:24:2"
       },
       {
-        "baseContracts": [],
-        "contractDependencies": [],
-        "contractKind": "contract",
-        "documentation": "Finalize agent defines what happens at the end of succeseful crowdsale.\n * - Allocate tokens for founders, bounties and community\n- Make tokens transferable\n- etc.",
-        "fullyImplemented": false,
-        "id": 1704,
-        "linearizedBaseContracts": [
-          1704
-        ],
-        "name": "FinalizeAgent",
-        "nodeType": "ContractDefinition",
-        "nodes": [
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "Finalize agent defines what happens at the end of succeseful crowdsale.\n * - Allocate tokens for founders, bounties and community\n- Make tokens transferable\n- etc.",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            1704
+          ],
+          "name": "FinalizeAgent",
+          "scope": 1705
+        },
+        "children": [
           {
-            "constant": false,
-            "id": 1682,
-            "name": "reservedTokensAreDistributed",
-            "nodeType": "VariableDeclaration",
-            "scope": 1704,
-            "src": "475:48:2",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_bool",
-              "typeString": "bool"
+            "attributes": {
+              "constant": false,
+              "name": "reservedTokensAreDistributed",
+              "scope": 1704,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bool",
+              "visibility": "public"
             },
-            "typeName": {
-              "id": 1680,
-              "name": "bool",
-              "nodeType": "ElementaryTypeName",
-              "src": "475:4:2",
-              "typeDescriptions": {
-                "typeIdentifier": "t_bool",
-                "typeString": "bool"
-              }
-            },
-            "value": {
-              "argumentTypes": null,
-              "hexValue": "66616c7365",
-              "id": 1681,
-              "isConstant": false,
-              "isLValue": false,
-              "isPure": true,
-              "kind": "bool",
-              "lValueRequested": false,
-              "nodeType": "Literal",
-              "src": "518:5:2",
-              "subdenomination": null,
-              "typeDescriptions": {
-                "typeIdentifier": "t_bool",
-                "typeString": "bool"
+            "children": [
+              {
+                "attributes": {
+                  "name": "bool",
+                  "type": "bool"
+                },
+                "id": 1680,
+                "name": "ElementaryTypeName",
+                "src": "475:4:2"
               },
-              "value": "false"
-            },
-            "visibility": "public"
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "66616c7365",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "bool",
+                  "type": "bool",
+                  "value": "false"
+                },
+                "id": 1681,
+                "name": "Literal",
+                "src": "518:5:2"
+              }
+            ],
+            "id": 1682,
+            "name": "VariableDeclaration",
+            "src": "475:48:2"
           },
           {
-            "body": {
-              "id": 1689,
-              "nodeType": "Block",
-              "src": "585:22:2",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "hexValue": "74727565",
-                    "id": 1687,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": true,
-                    "kind": "bool",
-                    "lValueRequested": false,
-                    "nodeType": "Literal",
-                    "src": "598:4:2",
-                    "subdenomination": null,
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "isFinalizeAgent",
+              "payable": false,
+              "scope": 1704,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1683,
+                "name": "ParameterList",
+                "src": "552:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1690,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
                     },
-                    "value": "true"
-                  },
-                  "functionReturnParameters": 1686,
-                  "id": 1688,
-                  "nodeType": "Return",
-                  "src": "591:11:2"
-                }
-              ]
-            },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 1684,
+                        "name": "ElementaryTypeName",
+                        "src": "579:4:2"
+                      }
+                    ],
+                    "id": 1685,
+                    "name": "VariableDeclaration",
+                    "src": "579:4:2"
+                  }
+                ],
+                "id": 1686,
+                "name": "ParameterList",
+                "src": "578:6:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 1686
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 1687,
+                        "name": "Literal",
+                        "src": "598:4:2"
+                      }
+                    ],
+                    "id": 1688,
+                    "name": "Return",
+                    "src": "591:11:2"
+                  }
+                ],
+                "id": 1689,
+                "name": "Block",
+                "src": "585:22:2"
+              }
+            ],
             "id": 1690,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
-            "name": "isFinalizeAgent",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1683,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "552:2:2"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 1686,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 1685,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 1690,
-                  "src": "579:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 1684,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "579:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "578:6:2"
-            },
-            "scope": 1704,
-            "src": "528:79:2",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
+            "name": "FunctionDefinition",
+            "src": "528:79:2"
           },
           {
-            "body": null,
+            "attributes": {
+              "body": null,
+              "constant": true,
+              "implemented": false,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "isSane",
+              "payable": false,
+              "scope": 1704,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1691,
+                "name": "ParameterList",
+                "src": "826:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1695,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 1692,
+                        "name": "ElementaryTypeName",
+                        "src": "854:4:2"
+                      }
+                    ],
+                    "id": 1693,
+                    "name": "VariableDeclaration",
+                    "src": "854:4:2"
+                  }
+                ],
+                "id": 1694,
+                "name": "ParameterList",
+                "src": "853:6:2"
+              }
+            ],
             "id": 1695,
-            "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
-            "name": "isSane",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1691,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "826:2:2"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 1694,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 1693,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 1695,
-                  "src": "854:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 1692,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "854:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "853:6:2"
-            },
-            "scope": 1704,
-            "src": "811:49:2",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
+            "name": "FunctionDefinition",
+            "src": "811:49:2"
           },
           {
-            "body": null,
+            "attributes": {
+              "body": null,
+              "constant": false,
+              "implemented": false,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "distributeReservedTokens",
+              "payable": false,
+              "scope": 1704,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "reservedTokensDistributionBatch",
+                      "scope": 1700,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 1696,
+                        "name": "ElementaryTypeName",
+                        "src": "898:4:2"
+                      }
+                    ],
+                    "id": 1697,
+                    "name": "VariableDeclaration",
+                    "src": "898:36:2"
+                  }
+                ],
+                "id": 1698,
+                "name": "ParameterList",
+                "src": "897:38:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1699,
+                "name": "ParameterList",
+                "src": "942:0:2"
+              }
+            ],
             "id": 1700,
-            "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "distributeReservedTokens",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1698,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 1697,
-                  "name": "reservedTokensDistributionBatch",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 1700,
-                  "src": "898:36:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 1696,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "898:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "897:38:2"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 1699,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "942:0:2"
-            },
-            "scope": 1704,
-            "src": "864:79:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
+            "name": "FunctionDefinition",
+            "src": "864:79:2"
           },
           {
-            "body": null,
+            "attributes": {
+              "body": null,
+              "constant": false,
+              "implemented": false,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "finalizeCrowdsale",
+              "payable": false,
+              "scope": 1704,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1701,
+                "name": "ParameterList",
+                "src": "1043:2:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1702,
+                "name": "ParameterList",
+                "src": "1052:0:2"
+              }
+            ],
             "id": 1703,
-            "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "finalizeCrowdsale",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1701,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1043:2:2"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 1702,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1052:0:2"
-            },
-            "scope": 1704,
-            "src": "1017:36:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
+            "name": "FunctionDefinition",
+            "src": "1017:36:2"
           }
         ],
-        "scope": 1705,
+        "id": 1704,
+        "name": "ContractDefinition",
         "src": "447:609:2"
       }
     ],
-    "src": "237:819:2"
-  },
-  "legacyAST": {
-    "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FinalizeAgent.sol",
-    "exportedSymbols": {
-      "FinalizeAgent": [
-        1704
-      ]
-    },
     "id": 1705,
-    "nodeType": "SourceUnit",
-    "nodes": [
-      {
-        "id": 1679,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".19"
-        ],
-        "nodeType": "PragmaDirective",
-        "src": "237:24:2"
-      },
-      {
-        "baseContracts": [],
-        "contractDependencies": [],
-        "contractKind": "contract",
-        "documentation": "Finalize agent defines what happens at the end of succeseful crowdsale.\n * - Allocate tokens for founders, bounties and community\n- Make tokens transferable\n- etc.",
-        "fullyImplemented": false,
-        "id": 1704,
-        "linearizedBaseContracts": [
-          1704
-        ],
-        "name": "FinalizeAgent",
-        "nodeType": "ContractDefinition",
-        "nodes": [
-          {
-            "constant": false,
-            "id": 1682,
-            "name": "reservedTokensAreDistributed",
-            "nodeType": "VariableDeclaration",
-            "scope": 1704,
-            "src": "475:48:2",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_bool",
-              "typeString": "bool"
-            },
-            "typeName": {
-              "id": 1680,
-              "name": "bool",
-              "nodeType": "ElementaryTypeName",
-              "src": "475:4:2",
-              "typeDescriptions": {
-                "typeIdentifier": "t_bool",
-                "typeString": "bool"
-              }
-            },
-            "value": {
-              "argumentTypes": null,
-              "hexValue": "66616c7365",
-              "id": 1681,
-              "isConstant": false,
-              "isLValue": false,
-              "isPure": true,
-              "kind": "bool",
-              "lValueRequested": false,
-              "nodeType": "Literal",
-              "src": "518:5:2",
-              "subdenomination": null,
-              "typeDescriptions": {
-                "typeIdentifier": "t_bool",
-                "typeString": "bool"
-              },
-              "value": "false"
-            },
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 1689,
-              "nodeType": "Block",
-              "src": "585:22:2",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "hexValue": "74727565",
-                    "id": 1687,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": true,
-                    "kind": "bool",
-                    "lValueRequested": false,
-                    "nodeType": "Literal",
-                    "src": "598:4:2",
-                    "subdenomination": null,
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    },
-                    "value": "true"
-                  },
-                  "functionReturnParameters": 1686,
-                  "id": 1688,
-                  "nodeType": "Return",
-                  "src": "591:11:2"
-                }
-              ]
-            },
-            "id": 1690,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
-            "name": "isFinalizeAgent",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1683,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "552:2:2"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 1686,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 1685,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 1690,
-                  "src": "579:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 1684,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "579:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "578:6:2"
-            },
-            "scope": 1704,
-            "src": "528:79:2",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": null,
-            "id": 1695,
-            "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
-            "name": "isSane",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1691,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "826:2:2"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 1694,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 1693,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 1695,
-                  "src": "854:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 1692,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "854:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "853:6:2"
-            },
-            "scope": 1704,
-            "src": "811:49:2",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": null,
-            "id": 1700,
-            "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "distributeReservedTokens",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1698,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 1697,
-                  "name": "reservedTokensDistributionBatch",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 1700,
-                  "src": "898:36:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 1696,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "898:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "897:38:2"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 1699,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "942:0:2"
-            },
-            "scope": 1704,
-            "src": "864:79:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": null,
-            "id": 1703,
-            "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "finalizeCrowdsale",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1701,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1043:2:2"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 1702,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1052:0:2"
-            },
-            "scope": 1704,
-            "src": "1017:36:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          }
-        ],
-        "scope": 1705,
-        "src": "447:609:2"
-      }
-    ],
+    "name": "SourceUnit",
     "src": "237:819:2"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-13T08:29:19.102Z"
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-03-14T12:46:16.817Z"
 }

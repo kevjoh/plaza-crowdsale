@@ -2,9 +2,32 @@
   "contractName": "NullFinalizeAgentExt",
   "abi": [
     {
+      "constant": false,
+      "inputs": [],
+      "name": "finalizeCrowdsale",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "constant": true,
       "inputs": [],
       "name": "isFinalizeAgent",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isSane",
       "outputs": [
         {
           "name": "",
@@ -27,6 +50,20 @@
       ],
       "payable": false,
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "reservedTokensDistributionBatch",
+          "type": "uint256"
+        }
+      ],
+      "name": "distributeReservedTokens",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -53,856 +90,503 @@
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "constructor"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "isSane",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "reservedTokensDistributionBatch",
-          "type": "uint256"
-        }
-      ],
-      "name": "distributeReservedTokens",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [],
-      "name": "finalizeCrowdsale",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
     }
   ],
-  "bytecode": "0x606060405260008060006101000a81548160ff021916908315150217905550341561002957600080fd5b6040516020806102a28339810160405280805190602001909190505080600060016101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505061020c806100966000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630bf318a31461007d578063614cb9041461009257806382771c8e146100bf5780639c1e03a0146100ec578063cddaf24114610141578063f9cb6d7a14610164575b600080fd5b341561008857600080fd5b610090610191565b005b341561009d57600080fd5b6100a5610193565b604051808215151515815260200191505060405180910390f35b34156100ca57600080fd5b6100d261019c565b604051808215151515815260200191505060405180910390f35b34156100f757600080fd5b6100ff6101a5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561014c57600080fd5b61016260048080359060200190919050506101cb565b005b341561016f57600080fd5b6101776101ce565b604051808215151515815260200191505060405180910390f35b565b60006001905090565b60006001905090565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50565b6000809054906101000a900460ff16815600a165627a7a72305820a93c36038e12bed1b49be856c27e9f9be3daba6410068fc066f8087d162e8f400029",
-  "deployedBytecode": "0x606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630bf318a31461007d578063614cb9041461009257806382771c8e146100bf5780639c1e03a0146100ec578063cddaf24114610141578063f9cb6d7a14610164575b600080fd5b341561008857600080fd5b610090610191565b005b341561009d57600080fd5b6100a5610193565b604051808215151515815260200191505060405180910390f35b34156100ca57600080fd5b6100d261019c565b604051808215151515815260200191505060405180910390f35b34156100f757600080fd5b6100ff6101a5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561014c57600080fd5b61016260048080359060200190919050506101cb565b005b341561016f57600080fd5b6101776101ce565b604051808215151515815260200191505060405180910390f35b565b60006001905090565b60006001905090565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50565b6000809054906101000a900460ff16815600a165627a7a72305820a93c36038e12bed1b49be856c27e9f9be3daba6410068fc066f8087d162e8f400029",
+  "bytecode": "0x606060405260008060006101000a81548160ff021916908315150217905550341561002957600080fd5b6040516020806102a28339810160405280805190602001909190505080600060016101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505061020c806100966000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630bf318a31461007d578063614cb9041461009257806382771c8e146100bf5780639c1e03a0146100ec578063cddaf24114610141578063f9cb6d7a14610164575b600080fd5b341561008857600080fd5b610090610191565b005b341561009d57600080fd5b6100a5610193565b604051808215151515815260200191505060405180910390f35b34156100ca57600080fd5b6100d261019c565b604051808215151515815260200191505060405180910390f35b34156100f757600080fd5b6100ff6101a5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561014c57600080fd5b61016260048080359060200190919050506101cb565b005b341561016f57600080fd5b6101776101ce565b604051808215151515815260200191505060405180910390f35b565b60006001905090565b60006001905090565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50565b6000809054906101000a900460ff16815600a165627a7a723058206eee11fb3478b3929f08957f3fea89d5d0a7c15d7efe3d8fc3c8884077f9cd520029",
+  "deployedBytecode": "0x606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630bf318a31461007d578063614cb9041461009257806382771c8e146100bf5780639c1e03a0146100ec578063cddaf24114610141578063f9cb6d7a14610164575b600080fd5b341561008857600080fd5b610090610191565b005b341561009d57600080fd5b6100a5610193565b604051808215151515815260200191505060405180910390f35b34156100ca57600080fd5b6100d261019c565b604051808215151515815260200191505060405180910390f35b34156100f757600080fd5b6100ff6101a5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561014c57600080fd5b61016260048080359060200190919050506101cb565b005b341561016f57600080fd5b6101776101ce565b604051808215151515815260200191505060405180910390f35b565b60006001905090565b60006001905090565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50565b6000809054906101000a900460ff16815600a165627a7a723058206eee11fb3478b3929f08957f3fea89d5d0a7c15d7efe3d8fc3c8884077f9cd520029",
   "sourceMap": "434:500:8:-;;;518:5:2;475:48;;;;;;;;;;;;;;;;;;;;520:88:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;593:10;581:9;;:22;;;;;;;;;;;;;;;;;;520:88;434:500;;;;;;",
   "deployedSourceMap": "434:500:8:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;890:41;;;;;;;;;;;;;;528:79:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;657:71:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;486:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;732:84;;;;;;;;;;;;;;;;;;;;;;;;;;475:48:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;890:41:8;:::o;528:79:2:-;579:4;598;591:11;;528:79;:::o;657:71:8:-;700:4;719;712:11;;657:71;:::o;486:29::-;;;;;;;;;;;;;:::o;732:84::-;;:::o;475:48:2:-;;;;;;;;;;;;;:::o",
-  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.19;\n\nimport \"./CrowdsaleExt.sol\";\nimport \"./ReleasableToken.sol\";\n\n/**\n * A finalize agent that does nothing.\n *\n * - Token transfer must be manually released by the owner\n */\ncontract NullFinalizeAgentExt is FinalizeAgent {\n\n  CrowdsaleExt public crowdsale;\n\n  function NullFinalizeAgentExt(CrowdsaleExt _crowdsale) {\n    crowdsale = _crowdsale;\n  }\n\n  /** Check that we can release the token */\n  function isSane() public constant returns (bool) {\n    return true;\n  }\n\n  function distributeReservedTokens(uint reservedTokensDistributionBatch) public {\n  }\n\n  /** Called once by crowdsale finalize() if the sale was success. */\n  function finalizeCrowdsale() public {\n  }\n\n}",
+  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.18;\n\nimport \"./CrowdsaleExt.sol\";\nimport \"./ReleasableToken.sol\";\n\n/**\n * A finalize agent that does nothing.\n *\n * - Token transfer must be manually released by the owner\n */\ncontract NullFinalizeAgentExt is FinalizeAgent {\n\n  CrowdsaleExt public crowdsale;\n\n  function NullFinalizeAgentExt(CrowdsaleExt _crowdsale) {\n    crowdsale = _crowdsale;\n  }\n\n  /** Check that we can release the token */\n  function isSane() public constant returns (bool) {\n    return true;\n  }\n\n  function distributeReservedTokens(uint reservedTokensDistributionBatch) public {\n  }\n\n  /** Called once by crowdsale finalize() if the sale was success. */\n  function finalizeCrowdsale() public {\n  }\n\n}",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/NullFinalizeAgentExt.sol",
   "ast": {
-    "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/NullFinalizeAgentExt.sol",
-    "exportedSymbols": {
-      "NullFinalizeAgentExt": [
-        2446
-      ]
+    "attributes": {
+      "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/NullFinalizeAgentExt.sol",
+      "exportedSymbols": {
+        "NullFinalizeAgentExt": [
+          2446
+        ]
+      }
     },
-    "id": 2447,
-    "nodeType": "SourceUnit",
-    "nodes": [
+    "children": [
       {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".18"
+          ]
+        },
         "id": 2411,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".19"
-        ],
-        "nodeType": "PragmaDirective",
+        "name": "PragmaDirective",
         "src": "237:24:8"
       },
       {
-        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/CrowdsaleExt.sol",
-        "file": "./CrowdsaleExt.sol",
+        "attributes": {
+          "SourceUnit": 1477,
+          "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/CrowdsaleExt.sol",
+          "file": "./CrowdsaleExt.sol",
+          "scope": 2447,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
         "id": 2412,
-        "nodeType": "ImportDirective",
-        "scope": 2447,
-        "sourceUnit": 1477,
-        "src": "263:28:8",
-        "symbolAliases": [],
-        "unitAlias": ""
+        "name": "ImportDirective",
+        "src": "263:28:8"
       },
       {
-        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/ReleasableToken.sol",
-        "file": "./ReleasableToken.sol",
+        "attributes": {
+          "SourceUnit": 2644,
+          "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/ReleasableToken.sol",
+          "file": "./ReleasableToken.sol",
+          "scope": 2447,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
         "id": 2413,
-        "nodeType": "ImportDirective",
-        "scope": 2447,
-        "sourceUnit": 2644,
-        "src": "292:31:8",
-        "symbolAliases": [],
-        "unitAlias": ""
+        "name": "ImportDirective",
+        "src": "292:31:8"
       },
       {
-        "baseContracts": [
+        "attributes": {
+          "contractDependencies": [
+            1704
+          ],
+          "contractKind": "contract",
+          "documentation": "A finalize agent that does nothing.\n * - Token transfer must be manually released by the owner",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            2446,
+            1704
+          ],
+          "name": "NullFinalizeAgentExt",
+          "scope": 2447
+        },
+        "children": [
           {
-            "arguments": [],
-            "baseName": {
-              "contractScope": null,
-              "id": 2414,
-              "name": "FinalizeAgent",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1704,
-              "src": "467:13:8",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_FinalizeAgent_$1704",
-                "typeString": "contract FinalizeAgent"
-              }
+            "attributes": {
+              "arguments": [
+                null
+              ]
             },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "FinalizeAgent",
+                  "referencedDeclaration": 1704,
+                  "type": "contract FinalizeAgent"
+                },
+                "id": 2414,
+                "name": "UserDefinedTypeName",
+                "src": "467:13:8"
+              }
+            ],
             "id": 2415,
-            "nodeType": "InheritanceSpecifier",
+            "name": "InheritanceSpecifier",
             "src": "467:13:8"
-          }
-        ],
-        "contractDependencies": [
-          1704
-        ],
-        "contractKind": "contract",
-        "documentation": "A finalize agent that does nothing.\n * - Token transfer must be manually released by the owner",
-        "fullyImplemented": true,
-        "id": 2446,
-        "linearizedBaseContracts": [
-          2446,
-          1704
-        ],
-        "name": "NullFinalizeAgentExt",
-        "nodeType": "ContractDefinition",
-        "nodes": [
+          },
           {
-            "constant": false,
-            "id": 2417,
-            "name": "crowdsale",
-            "nodeType": "VariableDeclaration",
-            "scope": 2446,
-            "src": "486:29:8",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-              "typeString": "contract CrowdsaleExt"
+            "attributes": {
+              "constant": false,
+              "name": "crowdsale",
+              "scope": 2446,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract CrowdsaleExt",
+              "value": null,
+              "visibility": "public"
             },
-            "typeName": {
-              "contractScope": null,
-              "id": 2416,
-              "name": "CrowdsaleExt",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1476,
-              "src": "486:12:8",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                "typeString": "contract CrowdsaleExt"
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "CrowdsaleExt",
+                  "referencedDeclaration": 1476,
+                  "type": "contract CrowdsaleExt"
+                },
+                "id": 2416,
+                "name": "UserDefinedTypeName",
+                "src": "486:12:8"
               }
-            },
-            "value": null,
-            "visibility": "public"
+            ],
+            "id": 2417,
+            "name": "VariableDeclaration",
+            "src": "486:29:8"
           },
           {
-            "body": {
-              "id": 2426,
-              "nodeType": "Block",
-              "src": "575:33:8",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "id": 2424,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "leftHandSide": {
-                      "argumentTypes": null,
-                      "id": 2422,
-                      "name": "crowdsale",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2417,
-                      "src": "581:9:8",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                        "typeString": "contract CrowdsaleExt"
-                      }
-                    },
-                    "nodeType": "Assignment",
-                    "operator": "=",
-                    "rightHandSide": {
-                      "argumentTypes": null,
-                      "id": 2423,
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "NullFinalizeAgentExt",
+              "payable": false,
+              "scope": 2446,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
                       "name": "_crowdsale",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2419,
-                      "src": "593:10:8",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                        "typeString": "contract CrowdsaleExt"
+                      "scope": 2427,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract CrowdsaleExt",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "CrowdsaleExt",
+                          "referencedDeclaration": 1476,
+                          "type": "contract CrowdsaleExt"
+                        },
+                        "id": 2418,
+                        "name": "UserDefinedTypeName",
+                        "src": "550:12:8"
                       }
-                    },
-                    "src": "581:22:8",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                      "typeString": "contract CrowdsaleExt"
-                    }
-                  },
-                  "id": 2425,
-                  "nodeType": "ExpressionStatement",
-                  "src": "581:22:8"
-                }
-              ]
-            },
+                    ],
+                    "id": 2419,
+                    "name": "VariableDeclaration",
+                    "src": "550:23:8"
+                  }
+                ],
+                "id": 2420,
+                "name": "ParameterList",
+                "src": "549:25:8"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2421,
+                "name": "ParameterList",
+                "src": "575:0:8"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract CrowdsaleExt"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2417,
+                              "type": "contract CrowdsaleExt",
+                              "value": "crowdsale"
+                            },
+                            "id": 2422,
+                            "name": "Identifier",
+                            "src": "581:9:8"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2419,
+                              "type": "contract CrowdsaleExt",
+                              "value": "_crowdsale"
+                            },
+                            "id": 2423,
+                            "name": "Identifier",
+                            "src": "593:10:8"
+                          }
+                        ],
+                        "id": 2424,
+                        "name": "Assignment",
+                        "src": "581:22:8"
+                      }
+                    ],
+                    "id": 2425,
+                    "name": "ExpressionStatement",
+                    "src": "581:22:8"
+                  }
+                ],
+                "id": 2426,
+                "name": "Block",
+                "src": "575:33:8"
+              }
+            ],
             "id": 2427,
-            "implemented": true,
-            "isConstructor": true,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "NullFinalizeAgentExt",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2420,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 2419,
-                  "name": "_crowdsale",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 2427,
-                  "src": "550:23:8",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                    "typeString": "contract CrowdsaleExt"
-                  },
-                  "typeName": {
-                    "contractScope": null,
-                    "id": 2418,
-                    "name": "CrowdsaleExt",
-                    "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 1476,
-                    "src": "550:12:8",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                      "typeString": "contract CrowdsaleExt"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "549:25:8"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 2421,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "575:0:8"
-            },
-            "scope": 2446,
-            "src": "520:88:8",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
+            "name": "FunctionDefinition",
+            "src": "520:88:8"
           },
           {
-            "body": {
-              "id": 2434,
-              "nodeType": "Block",
-              "src": "706:22:8",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "hexValue": "74727565",
-                    "id": 2432,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": true,
-                    "kind": "bool",
-                    "lValueRequested": false,
-                    "nodeType": "Literal",
-                    "src": "719:4:8",
-                    "subdenomination": null,
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "isSane",
+              "payable": false,
+              "scope": 2446,
+              "stateMutability": "view",
+              "superFunction": 1695,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2428,
+                "name": "ParameterList",
+                "src": "672:2:8"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2435,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
                     },
-                    "value": "true"
-                  },
-                  "functionReturnParameters": 2431,
-                  "id": 2433,
-                  "nodeType": "Return",
-                  "src": "712:11:8"
-                }
-              ]
-            },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 2429,
+                        "name": "ElementaryTypeName",
+                        "src": "700:4:8"
+                      }
+                    ],
+                    "id": 2430,
+                    "name": "VariableDeclaration",
+                    "src": "700:4:8"
+                  }
+                ],
+                "id": 2431,
+                "name": "ParameterList",
+                "src": "699:6:8"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2431
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 2432,
+                        "name": "Literal",
+                        "src": "719:4:8"
+                      }
+                    ],
+                    "id": 2433,
+                    "name": "Return",
+                    "src": "712:11:8"
+                  }
+                ],
+                "id": 2434,
+                "name": "Block",
+                "src": "706:22:8"
+              }
+            ],
             "id": 2435,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
-            "name": "isSane",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2428,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "672:2:8"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 2431,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 2430,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 2435,
-                  "src": "700:4:8",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 2429,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "700:4:8",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "699:6:8"
-            },
-            "scope": 2446,
-            "src": "657:71:8",
-            "stateMutability": "view",
-            "superFunction": 1695,
-            "visibility": "public"
+            "name": "FunctionDefinition",
+            "src": "657:71:8"
           },
           {
-            "body": {
-              "id": 2440,
-              "nodeType": "Block",
-              "src": "811:5:8",
-              "statements": []
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "distributeReservedTokens",
+              "payable": false,
+              "scope": 2446,
+              "stateMutability": "nonpayable",
+              "superFunction": 1700,
+              "visibility": "public"
             },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "reservedTokensDistributionBatch",
+                      "scope": 2441,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2436,
+                        "name": "ElementaryTypeName",
+                        "src": "766:4:8"
+                      }
+                    ],
+                    "id": 2437,
+                    "name": "VariableDeclaration",
+                    "src": "766:36:8"
+                  }
+                ],
+                "id": 2438,
+                "name": "ParameterList",
+                "src": "765:38:8"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2439,
+                "name": "ParameterList",
+                "src": "811:0:8"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2440,
+                "name": "Block",
+                "src": "811:5:8"
+              }
+            ],
             "id": 2441,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "distributeReservedTokens",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2438,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 2437,
-                  "name": "reservedTokensDistributionBatch",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 2441,
-                  "src": "766:36:8",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 2436,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "766:4:8",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "765:38:8"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 2439,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "811:0:8"
-            },
-            "scope": 2446,
-            "src": "732:84:8",
-            "stateMutability": "nonpayable",
-            "superFunction": 1700,
-            "visibility": "public"
+            "name": "FunctionDefinition",
+            "src": "732:84:8"
           },
           {
-            "body": {
-              "id": 2444,
-              "nodeType": "Block",
-              "src": "926:5:8",
-              "statements": []
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "finalizeCrowdsale",
+              "payable": false,
+              "scope": 2446,
+              "stateMutability": "nonpayable",
+              "superFunction": 1703,
+              "visibility": "public"
             },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2442,
+                "name": "ParameterList",
+                "src": "916:2:8"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2443,
+                "name": "ParameterList",
+                "src": "926:0:8"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2444,
+                "name": "Block",
+                "src": "926:5:8"
+              }
+            ],
             "id": 2445,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "finalizeCrowdsale",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2442,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "916:2:8"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 2443,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "926:0:8"
-            },
-            "scope": 2446,
-            "src": "890:41:8",
-            "stateMutability": "nonpayable",
-            "superFunction": 1703,
-            "visibility": "public"
+            "name": "FunctionDefinition",
+            "src": "890:41:8"
           }
         ],
-        "scope": 2447,
+        "id": 2446,
+        "name": "ContractDefinition",
         "src": "434:500:8"
       }
     ],
-    "src": "237:697:8"
-  },
-  "legacyAST": {
-    "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/NullFinalizeAgentExt.sol",
-    "exportedSymbols": {
-      "NullFinalizeAgentExt": [
-        2446
-      ]
-    },
     "id": 2447,
-    "nodeType": "SourceUnit",
-    "nodes": [
-      {
-        "id": 2411,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".19"
-        ],
-        "nodeType": "PragmaDirective",
-        "src": "237:24:8"
-      },
-      {
-        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/CrowdsaleExt.sol",
-        "file": "./CrowdsaleExt.sol",
-        "id": 2412,
-        "nodeType": "ImportDirective",
-        "scope": 2447,
-        "sourceUnit": 1477,
-        "src": "263:28:8",
-        "symbolAliases": [],
-        "unitAlias": ""
-      },
-      {
-        "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/ReleasableToken.sol",
-        "file": "./ReleasableToken.sol",
-        "id": 2413,
-        "nodeType": "ImportDirective",
-        "scope": 2447,
-        "sourceUnit": 2644,
-        "src": "292:31:8",
-        "symbolAliases": [],
-        "unitAlias": ""
-      },
-      {
-        "baseContracts": [
-          {
-            "arguments": [],
-            "baseName": {
-              "contractScope": null,
-              "id": 2414,
-              "name": "FinalizeAgent",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1704,
-              "src": "467:13:8",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_FinalizeAgent_$1704",
-                "typeString": "contract FinalizeAgent"
-              }
-            },
-            "id": 2415,
-            "nodeType": "InheritanceSpecifier",
-            "src": "467:13:8"
-          }
-        ],
-        "contractDependencies": [
-          1704
-        ],
-        "contractKind": "contract",
-        "documentation": "A finalize agent that does nothing.\n * - Token transfer must be manually released by the owner",
-        "fullyImplemented": true,
-        "id": 2446,
-        "linearizedBaseContracts": [
-          2446,
-          1704
-        ],
-        "name": "NullFinalizeAgentExt",
-        "nodeType": "ContractDefinition",
-        "nodes": [
-          {
-            "constant": false,
-            "id": 2417,
-            "name": "crowdsale",
-            "nodeType": "VariableDeclaration",
-            "scope": 2446,
-            "src": "486:29:8",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-              "typeString": "contract CrowdsaleExt"
-            },
-            "typeName": {
-              "contractScope": null,
-              "id": 2416,
-              "name": "CrowdsaleExt",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1476,
-              "src": "486:12:8",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                "typeString": "contract CrowdsaleExt"
-              }
-            },
-            "value": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 2426,
-              "nodeType": "Block",
-              "src": "575:33:8",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "id": 2424,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "leftHandSide": {
-                      "argumentTypes": null,
-                      "id": 2422,
-                      "name": "crowdsale",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2417,
-                      "src": "581:9:8",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                        "typeString": "contract CrowdsaleExt"
-                      }
-                    },
-                    "nodeType": "Assignment",
-                    "operator": "=",
-                    "rightHandSide": {
-                      "argumentTypes": null,
-                      "id": 2423,
-                      "name": "_crowdsale",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2419,
-                      "src": "593:10:8",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                        "typeString": "contract CrowdsaleExt"
-                      }
-                    },
-                    "src": "581:22:8",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                      "typeString": "contract CrowdsaleExt"
-                    }
-                  },
-                  "id": 2425,
-                  "nodeType": "ExpressionStatement",
-                  "src": "581:22:8"
-                }
-              ]
-            },
-            "id": 2427,
-            "implemented": true,
-            "isConstructor": true,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "NullFinalizeAgentExt",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2420,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 2419,
-                  "name": "_crowdsale",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 2427,
-                  "src": "550:23:8",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                    "typeString": "contract CrowdsaleExt"
-                  },
-                  "typeName": {
-                    "contractScope": null,
-                    "id": 2418,
-                    "name": "CrowdsaleExt",
-                    "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 1476,
-                    "src": "550:12:8",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_CrowdsaleExt_$1476",
-                      "typeString": "contract CrowdsaleExt"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "549:25:8"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 2421,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "575:0:8"
-            },
-            "scope": 2446,
-            "src": "520:88:8",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 2434,
-              "nodeType": "Block",
-              "src": "706:22:8",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "hexValue": "74727565",
-                    "id": 2432,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": true,
-                    "kind": "bool",
-                    "lValueRequested": false,
-                    "nodeType": "Literal",
-                    "src": "719:4:8",
-                    "subdenomination": null,
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    },
-                    "value": "true"
-                  },
-                  "functionReturnParameters": 2431,
-                  "id": 2433,
-                  "nodeType": "Return",
-                  "src": "712:11:8"
-                }
-              ]
-            },
-            "id": 2435,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
-            "name": "isSane",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2428,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "672:2:8"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 2431,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 2430,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 2435,
-                  "src": "700:4:8",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 2429,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "700:4:8",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "699:6:8"
-            },
-            "scope": 2446,
-            "src": "657:71:8",
-            "stateMutability": "view",
-            "superFunction": 1695,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 2440,
-              "nodeType": "Block",
-              "src": "811:5:8",
-              "statements": []
-            },
-            "id": 2441,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "distributeReservedTokens",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2438,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 2437,
-                  "name": "reservedTokensDistributionBatch",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 2441,
-                  "src": "766:36:8",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 2436,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "766:4:8",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "765:38:8"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 2439,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "811:0:8"
-            },
-            "scope": 2446,
-            "src": "732:84:8",
-            "stateMutability": "nonpayable",
-            "superFunction": 1700,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 2444,
-              "nodeType": "Block",
-              "src": "926:5:8",
-              "statements": []
-            },
-            "id": 2445,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "finalizeCrowdsale",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2442,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "916:2:8"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 2443,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "926:0:8"
-            },
-            "scope": 2446,
-            "src": "890:41:8",
-            "stateMutability": "nonpayable",
-            "superFunction": 1703,
-            "visibility": "public"
-          }
-        ],
-        "scope": 2447,
-        "src": "434:500:8"
-      }
-    ],
+    "name": "SourceUnit",
     "src": "237:697:8"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-13T08:29:19.105Z"
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-03-14T12:46:16.836Z"
 }
