@@ -49,11 +49,11 @@ async function liveDeploy(deployer, accounts){
 var SafeMathLibExt = artifacts.require("./SafeMathLibExt.sol");
 var CrowdsaleTokenExt = artifacts.require("./CrowdsaleTokenExt.sol");
 
-module.exports = function(deployer) {
-    return liveDeploy(deployer);
+module.exports = function(deployer, network, accounts) {
+    return liveDeploy(deployer, accounts);
 };
 
-function liveDeploy(deployer){
+function liveDeploy(deployer, accounts){
 
     const tokenName = "Plaza Test Token";
 
