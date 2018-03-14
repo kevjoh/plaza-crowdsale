@@ -45,7 +45,10 @@ module.exports = {
     },
     kovan: {
       provider: new HDWalletProvider(mnemonic, "https://kovan.infura.io/"+infura_apikey),
-      network_id: 42
+      host: 'localhost', 
+      port: 8545, 
+      network_id: 42, 
+      gas: 4000000
     }
   }
 };

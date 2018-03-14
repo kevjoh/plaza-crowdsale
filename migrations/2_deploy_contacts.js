@@ -49,10 +49,17 @@ async function liveDeploy(deployer, accounts){
 var SafeMathLibExt = artifacts.require("./SafeMathLibExt.sol");
 var CrowdsaleTokenExt = artifacts.require("./CrowdsaleTokenExt.sol");
 
-module.exports = function(deployer, network, accounts) {
-    return liveDeploy(deployer, accounts);
+module.exports = function(deployer) {
+    deployer.deploy(SafeMathLibExt);
+    //console.log('Library Address:', SafeMathLibExt.address);
 };
 
+/* module.exports = function(deployer, network, accounts) {
+    deployer.deploy(B).then(function() {
+      return deployer.deploy(A, B.address);
+    });
+  };
+ */
 function liveDeploy(deployer, accounts){
 
     const tokenName = "Plaza Test Token";
@@ -70,7 +77,7 @@ function liveDeploy(deployer, accounts){
     deployer.deploy(SafeMathLibExt);
     console.log('Library Address:', SafeMathLibExt.address);
 
-    deployer.link(SafeMathLibExt, [CrowdsaleTokenExt])
+    deployer.link(SafeMathLibExt, CrowdsaleTokenExt)
 
     // string _name, string _symbol, uint _initialSupply, uint _decimals, bool _mintable, uint _globalMinCap
     deployer.deploy(CrowdsaleTokenExt, tokenName, tokenSymbol, beginSupply, decimals, mintable, minCap);
