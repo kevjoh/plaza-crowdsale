@@ -48,27 +48,65 @@ var SafeMathLibExt = artifacts.require("./SafeMathLibExt.sol");
 
 var CrowdsaleTokenExt = artifacts.require("./CrowdsaleTokenExt.sol");
 
+// var PricingStrategy_Tier_1 = artifacts.require("./PricingStrategy.sol");
+/* var PricingStrategy_Tier_2 = artifacts.require("./PricingStrategy.sol");
+var PricingStrategy_Tier_3 = artifacts.require("./PricingStrategy.sol");
+var PricingStrategy_Tier_4 = artifacts.require("./PricingStrategy.sol");
+var PricingStrategy_Tier_5 = artifacts.require("./PricingStrategy.sol"); */
+
 module.exports = function(deployer) {
     deployer.deploy(SafeMathLibExt);
+
     deployer.link(SafeMathLibExt, CrowdsaleTokenExt);
-    return liveDeploy(deployer);
+    tokenDeploy(deployer);
+
+    //deployer.link(SafeMathLibExt, PricingStrategy_Tier_1);
+    //priceDeploy_Tier_1(deployer);
+
+    /* deployer.link(SafeMathLibExt, [PricingStrategy_Tier_1, PricingStrategy_Tier_2, PricingStrategy_Tier_3, PricingStrategy_Tier_4, PricingStrategy_Tier_5);
+    priceDeploy_Tier_1(deployer);
+    priceDeploy_Tier_2(deployer);
+    priceDeploy_Tier_3(deployer);
+    priceDeploy_Tier_4(deployer);
+    priceDeploy_Tier_5(deployer); */
 };
 
-
-function liveDeploy(deployer){
+function tokenDeploy(deployer){
 
     const tokenName = "Plaza Test Token";
 
     const tokenSymbol = "PTEST";
 
-    const beginSupply = 0;
+    const beginSupply = "0";
 
-    const decimals = 18;
+    const decimals = "18";
 
     const mintable = true;
 
-    const minCap = 0;
+    const minCap = "0";
 
     // string _name, string _symbol, uint _initialSupply, uint _decimals, bool _mintable, uint _globalMinCap
-    deployer.deploy(CrowdsaleTokenExt, tokenName, tokenSymbol, beginSupply, decimals, mintable, minCap);
+    return deployer.deploy(CrowdsaleTokenExt, tokenName, tokenSymbol, beginSupply, decimals, mintable, minCap);
 }
+
+/* function priceDeploy_Tier_1(deployer){
+     deployer.deploy(PricingStrategy_Tier_1);
+}
+
+function priceDeploy_Tier_2(deployer){
+     deployer.deploy(PricingStrategy_Tier_2);
+}
+
+function priceDeploy_Tier_3(deployer){
+     deployer.deploy(PricingStrategy_Tier_3);
+}
+
+function priceDeploy_Tier_4(deployer){
+     deployer.deploy(PricingStrategy_Tier_4);
+}
+
+function priceDeploy_Tier_5(deployer){
+     deployer.deploy(PricingStrategy_Tier_5);
+}
+
+ */

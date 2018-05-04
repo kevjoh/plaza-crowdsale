@@ -55,278 +55,476 @@
   "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.18;\n\n/**\n * Upgrade agent interface inspired by Lunyr.\n *\n * Upgrade agent transfers tokens to a new contract.\n * Upgrade agent itself can be the token contract, or just a middle man contract doing the heavy lifting.\n */\ncontract UpgradeAgent {\n  uint public originalSupply;\n\n  /** Interface marker */\n  function isUpgradeAgent() public constant returns (bool) {\n    return true;\n  }\n\n  function upgradeFrom(address _from, uint256 _value) public;\n}",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/UpgradeAgent.sol",
   "ast": {
-    "attributes": {
-      "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/UpgradeAgent.sol",
-      "exportedSymbols": {
-        "UpgradeAgent": [
-          3455
-        ]
-      }
+    "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/UpgradeAgent.sol",
+    "exportedSymbols": {
+      "UpgradeAgent": [
+        1242
+      ]
     },
-    "children": [
+    "id": 1243,
+    "nodeType": "SourceUnit",
+    "nodes": [
       {
-        "attributes": {
-          "literals": [
-            "solidity",
-            "^",
-            "0.4",
-            ".18"
-          ]
-        },
-        "id": 3437,
-        "name": "PragmaDirective",
-        "src": "237:24:15"
+        "id": 1224,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "237:24:7"
       },
       {
-        "attributes": {
-          "baseContracts": [
-            null
-          ],
-          "contractDependencies": [
-            null
-          ],
-          "contractKind": "contract",
-          "documentation": "Upgrade agent interface inspired by Lunyr.\n * Upgrade agent transfers tokens to a new contract.\nUpgrade agent itself can be the token contract, or just a middle man contract doing the heavy lifting.",
-          "fullyImplemented": false,
-          "linearizedBaseContracts": [
-            3455
-          ],
-          "name": "UpgradeAgent",
-          "scope": 3456
-        },
-        "children": [
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "Upgrade agent interface inspired by Lunyr.\n * Upgrade agent transfers tokens to a new contract.\nUpgrade agent itself can be the token contract, or just a middle man contract doing the heavy lifting.",
+        "fullyImplemented": false,
+        "id": 1242,
+        "linearizedBaseContracts": [
+          1242
+        ],
+        "name": "UpgradeAgent",
+        "nodeType": "ContractDefinition",
+        "nodes": [
           {
-            "attributes": {
-              "constant": false,
-              "name": "originalSupply",
-              "scope": 3455,
-              "stateVariable": true,
-              "storageLocation": "default",
-              "type": "uint256",
-              "value": null,
-              "visibility": "public"
+            "constant": false,
+            "id": 1226,
+            "name": "originalSupply",
+            "nodeType": "VariableDeclaration",
+            "scope": 1242,
+            "src": "505:26:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
             },
-            "children": [
-              {
-                "attributes": {
-                  "name": "uint",
-                  "type": "uint256"
-                },
-                "id": 3438,
-                "name": "ElementaryTypeName",
-                "src": "505:4:15"
+            "typeName": {
+              "id": 1225,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "505:4:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
               }
-            ],
-            "id": 3439,
-            "name": "VariableDeclaration",
-            "src": "505:26:15"
+            },
+            "value": null,
+            "visibility": "public"
           },
           {
-            "attributes": {
-              "constant": true,
-              "implemented": true,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
-              "name": "isUpgradeAgent",
-              "payable": false,
-              "scope": 3455,
-              "stateMutability": "view",
-              "superFunction": null,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 3440,
-                "name": "ParameterList",
-                "src": "585:2:15"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 3447,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "bool",
-                      "value": null,
-                      "visibility": "internal"
+            "body": {
+              "id": 1233,
+              "nodeType": "Block",
+              "src": "619:22:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 1231,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "632:4:7",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
                     },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "bool",
-                          "type": "bool"
-                        },
-                        "id": 3441,
-                        "name": "ElementaryTypeName",
-                        "src": "613:4:15"
-                      }
-                    ],
-                    "id": 3442,
-                    "name": "VariableDeclaration",
-                    "src": "613:4:15"
-                  }
-                ],
-                "id": 3443,
-                "name": "ParameterList",
-                "src": "612:6:15"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "functionReturnParameters": 3443
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "hexvalue": "74727565",
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "lValueRequested": false,
-                          "subdenomination": null,
-                          "token": "bool",
-                          "type": "bool",
-                          "value": "true"
-                        },
-                        "id": 3444,
-                        "name": "Literal",
-                        "src": "632:4:15"
-                      }
-                    ],
-                    "id": 3445,
-                    "name": "Return",
-                    "src": "625:11:15"
-                  }
-                ],
-                "id": 3446,
-                "name": "Block",
-                "src": "619:22:15"
-              }
-            ],
-            "id": 3447,
-            "name": "FunctionDefinition",
-            "src": "562:79:15"
-          },
-          {
-            "attributes": {
-              "body": null,
-              "constant": false,
-              "implemented": false,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
-              "name": "upgradeFrom",
-              "payable": false,
-              "scope": 3455,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "_from",
-                      "scope": 3454,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "address",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "address",
-                          "type": "address"
-                        },
-                        "id": 3448,
-                        "name": "ElementaryTypeName",
-                        "src": "666:7:15"
-                      }
-                    ],
-                    "id": 3449,
-                    "name": "VariableDeclaration",
-                    "src": "666:13:15"
+                    "value": "true"
                   },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "_value",
-                      "scope": 3454,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint256",
-                          "type": "uint256"
-                        },
-                        "id": 3450,
-                        "name": "ElementaryTypeName",
-                        "src": "681:7:15"
-                      }
-                    ],
-                    "id": 3451,
-                    "name": "VariableDeclaration",
-                    "src": "681:14:15"
-                  }
-                ],
-                "id": 3452,
-                "name": "ParameterList",
-                "src": "665:31:15"
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
+                  "functionReturnParameters": 1230,
+                  "id": 1232,
+                  "nodeType": "Return",
+                  "src": "625:11:7"
+                }
+              ]
+            },
+            "id": 1234,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isUpgradeAgent",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1227,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "585:2:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1230,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1229,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1234,
+                  "src": "613:4:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1228,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "613:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "612:6:7"
+            },
+            "scope": 1242,
+            "src": "562:79:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "id": 1241,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "upgradeFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1239,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1236,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1241,
+                  "src": "666:13:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1235,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "666:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
                 },
-                "children": [],
-                "id": 3453,
-                "name": "ParameterList",
-                "src": "703:0:15"
-              }
-            ],
-            "id": 3454,
-            "name": "FunctionDefinition",
-            "src": "645:59:15"
+                {
+                  "constant": false,
+                  "id": 1238,
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1241,
+                  "src": "681:14:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1237,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "681:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "665:31:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1240,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "703:0:7"
+            },
+            "scope": 1242,
+            "src": "645:59:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "id": 3455,
-        "name": "ContractDefinition",
-        "src": "479:227:15"
+        "scope": 1243,
+        "src": "479:227:7"
       }
     ],
-    "id": 3456,
-    "name": "SourceUnit",
-    "src": "237:469:15"
+    "src": "237:469:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/UpgradeAgent.sol",
+    "exportedSymbols": {
+      "UpgradeAgent": [
+        1242
+      ]
+    },
+    "id": 1243,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1224,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "237:24:7"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "Upgrade agent interface inspired by Lunyr.\n * Upgrade agent transfers tokens to a new contract.\nUpgrade agent itself can be the token contract, or just a middle man contract doing the heavy lifting.",
+        "fullyImplemented": false,
+        "id": 1242,
+        "linearizedBaseContracts": [
+          1242
+        ],
+        "name": "UpgradeAgent",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1226,
+            "name": "originalSupply",
+            "nodeType": "VariableDeclaration",
+            "scope": 1242,
+            "src": "505:26:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1225,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "505:4:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1233,
+              "nodeType": "Block",
+              "src": "619:22:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 1231,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "632:4:7",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 1230,
+                  "id": 1232,
+                  "nodeType": "Return",
+                  "src": "625:11:7"
+                }
+              ]
+            },
+            "id": 1234,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isUpgradeAgent",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1227,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "585:2:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1230,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1229,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1234,
+                  "src": "613:4:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1228,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "613:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "612:6:7"
+            },
+            "scope": 1242,
+            "src": "562:79:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "id": 1241,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "upgradeFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1239,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1236,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1241,
+                  "src": "666:13:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1235,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "666:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1238,
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1241,
+                  "src": "681:14:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1237,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "681:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "665:31:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1240,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "703:0:7"
+            },
+            "scope": 1242,
+            "src": "645:59:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1243,
+        "src": "479:227:7"
+      }
+    ],
+    "src": "237:469:7"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "1.0.1",
-  "updatedAt": "2018-03-14T12:46:16.847Z"
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-03-14T19:20:03.060Z"
 }
