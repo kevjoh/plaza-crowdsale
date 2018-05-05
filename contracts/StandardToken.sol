@@ -16,6 +16,7 @@ import "zeppelin-solidity/contracts/token/ERC20.sol";
  * https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
  */
 contract StandardToken is ERC20, SafeMath {
+
   /* Token supply got increased and a new owner received these tokens */
   event Minted(address receiver, uint amount);
 
@@ -57,7 +58,7 @@ contract StandardToken is ERC20, SafeMath {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    assert((_value != 0) && (allowed[msg.sender][_spender] != 0));
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) throw;
 
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);

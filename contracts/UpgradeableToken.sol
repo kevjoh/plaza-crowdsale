@@ -60,9 +60,13 @@ contract UpgradeableToken is StandardToken {
   function upgrade(uint256 value) public {
 
       UpgradeState state = getUpgradeState();
-      assert(!(state == UpgradeState.ReadyToUpgrade || state == UpgradeState.Upgrading)); // Called in a bad state
+      if(!(state == UpgradeState.ReadyToUpgrade || state == UpgradeState.Upgrading)) {
+        // Called in a bad state
+        throw;
+      }
 
-      assert(value == 0); // Validate input value
+      // Validate input value.
+      if (value == 0) throw;
 
       balances[msg.sender] = safeSub(balances[msg.sender], value);
 
@@ -79,17 +83,24 @@ contract UpgradeableToken is StandardToken {
    * Set an upgrade agent that handles
    */
   function setUpgradeAgent(address agent) external {
-      assert(!canUpgrade()); // The token is not yet in a state that we could think upgrading
-      assert(agent == 0x0);
-      assert(msg.sender != upgradeMaster); // Only a master can designate the next agent
-      assert(getUpgradeState() == UpgradeState.Upgrading); // Upgrade has already begun for an agent
+
+      if(!canUpgrade()) {
+        // The token is not yet in a state that we could think upgrading
+        throw;
+      }
+
+      if (agent == 0x0) throw;
+      // Only a master can designate the next agent
+      if (msg.sender != upgradeMaster) throw;
+      // Upgrade has already begun for an agent
+      if (getUpgradeState() == UpgradeState.Upgrading) throw;
 
       upgradeAgent = UpgradeAgent(agent);
 
       // Bad interface
-      assert(!upgradeAgent.isUpgradeAgent());
+      if(!upgradeAgent.isUpgradeAgent()) throw;
       // Make sure that token supplies match in source and target
-      assert(upgradeAgent.originalSupply() != totalSupply);
+      if (upgradeAgent.originalSupply() != totalSupply) throw;
 
       UpgradeAgentSet(upgradeAgent);
   }
@@ -98,15 +109,10 @@ contract UpgradeableToken is StandardToken {
    * Get the state of the token upgrade.
    */
   function getUpgradeState() public constant returns(UpgradeState) {
-    if (!canUpgrade()) {
-        return UpgradeState.NotAllowed;
-    } else if (address(upgradeAgent) == 0x00) {
-        return UpgradeState.WaitingForAgent;
-    } else if (totalUpgraded == 0) {
-        return UpgradeState.ReadyToUpgrade;
-    } else {
-        return UpgradeState.Upgrading;
-    }
+    if(!canUpgrade()) return UpgradeState.NotAllowed;
+    else if(address(upgradeAgent) == 0x00) return UpgradeState.WaitingForAgent;
+    else if(totalUpgraded == 0) return UpgradeState.ReadyToUpgrade;
+    else return UpgradeState.Upgrading;
   }
 
   /**
@@ -115,10 +121,9 @@ contract UpgradeableToken is StandardToken {
    * This allows us to set a new owner for the upgrade mechanism.
    */
   function setUpgradeMaster(address master) public {
-    assert(master == 0x0);
-    assert(msg.sender != upgradeMaster);
-
-    upgradeMaster = master;
+      if (master == 0x0) throw;
+      if (msg.sender != upgradeMaster) throw;
+      upgradeMaster = master;
   }
 
   /**
@@ -129,4 +134,3 @@ contract UpgradeableToken is StandardToken {
   }
 
 }
-

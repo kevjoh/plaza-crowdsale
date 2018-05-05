@@ -1069,7 +1069,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 3224,
+          "SourceUnit": 3343,
           "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/SafeMathLibExt.sol",
           "file": "./SafeMathLibExt.sol",
           "scope": 1477,
@@ -1084,7 +1084,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 2500,
+          "SourceUnit": 2618,
           "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/PricingStrategy.sol",
           "file": "./PricingStrategy.sol",
           "scope": 1477,
@@ -1114,7 +1114,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 1715,
+          "SourceUnit": 1837,
           "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FractionalERC20Ext.sol",
           "file": "./FractionalERC20Ext.sol",
           "scope": 1477,
@@ -1129,7 +1129,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 1775,
+          "SourceUnit": 1894,
           "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/Haltable.sol",
           "file": "./Haltable.sol",
           "scope": 1477,
@@ -1145,16 +1145,16 @@
       {
         "attributes": {
           "contractDependencies": [
-            1774,
-            3751
+            1893,
+            3857
           ],
           "contractKind": "contract",
           "documentation": "Abstract base contract for token sales.\n * Handle\n- start and end dates\n- accepting investments\n- minimum funding goal and refund\n- various statistics during the crowdfund\n- different pricing strategies\n- different investment policies (require server side customer id, allow only whitelisted addresses)\n ",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
             1476,
-            1774,
-            3751
+            1893,
+            3857
           ],
           "name": "CrowdsaleExt",
           "scope": 1477
@@ -1171,7 +1171,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Haltable",
-                  "referencedDeclaration": 1774,
+                  "referencedDeclaration": 1893,
                   "type": "contract Haltable"
                 },
                 "id": 7,
@@ -1231,7 +1231,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SafeMathLibExt",
-                  "referencedDeclaration": 3223,
+                  "referencedDeclaration": 3342,
                   "type": "library SafeMathLibExt"
                 },
                 "id": 12,
@@ -1268,7 +1268,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "FractionalERC20Ext",
-                  "referencedDeclaration": 1714,
+                  "referencedDeclaration": 1836,
                   "type": "contract FractionalERC20Ext"
                 },
                 "id": 15,
@@ -1296,7 +1296,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "PricingStrategy",
-                  "referencedDeclaration": 2499,
+                  "referencedDeclaration": 2617,
                   "type": "contract PricingStrategy"
                 },
                 "id": 17,
@@ -2815,7 +2815,7 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "PricingStrategy",
-                          "referencedDeclaration": 2499,
+                          "referencedDeclaration": 2617,
                           "type": "contract PricingStrategy"
                         },
                         "id": 138,
@@ -3020,7 +3020,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3699,
+                              "referencedDeclaration": 3805,
                               "type": "address",
                               "value": "owner"
                             },
@@ -3046,7 +3046,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3835,
+                                  "referencedDeclaration": 3941,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -3173,7 +3173,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1714,
+                                  "referencedDeclaration": 1836,
                                   "type": "type(contract FractionalERC20Ext)",
                                   "value": "FractionalERC20Ext"
                                 },
@@ -3231,7 +3231,7 @@
                             "attributes": {
                               "argumentTypes": [
                                 {
-                                  "typeIdentifier": "t_contract$_PricingStrategy_$2499",
+                                  "typeIdentifier": "t_contract$_PricingStrategy_$2617",
                                   "typeString": "contract PricingStrategy"
                                 }
                               ],
@@ -3349,7 +3349,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -3446,7 +3446,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -3594,7 +3594,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -3742,7 +3742,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -4123,7 +4123,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 1729,
+                      "referencedDeclaration": 1850,
                       "type": "modifier ()",
                       "value": "stopInEmergency"
                     },
@@ -4386,7 +4386,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 3826,
+                                                  "referencedDeclaration": 3932,
                                                   "type": "function (bool) pure",
                                                   "value": "assert"
                                                 },
@@ -4570,7 +4570,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3835,
+                              "referencedDeclaration": 3941,
                               "type": "msg",
                               "value": "msg"
                             },
@@ -4665,7 +4665,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "calculatePrice",
-                              "referencedDeclaration": 2498,
+                              "referencedDeclaration": 2616,
                               "type": "function (uint256,uint256,uint256,address,uint256) view external returns (uint256)"
                             },
                             "children": [
@@ -4748,7 +4748,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3835,
+                                  "referencedDeclaration": 3941,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -4789,7 +4789,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "decimals",
-                                  "referencedDeclaration": 1711,
+                                  "referencedDeclaration": 1833,
                                   "type": "function () view external returns (uint256)"
                                 },
                                 "children": [
@@ -4855,7 +4855,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -4970,7 +4970,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 3826,
+                                      "referencedDeclaration": 3932,
                                       "type": "function (bool) pure",
                                       "value": "assert"
                                     },
@@ -5210,7 +5210,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 3826,
+                                      "referencedDeclaration": 3932,
                                       "type": "function (bool) pure",
                                       "value": "assert"
                                     },
@@ -5412,7 +5412,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 3826,
+                                      "referencedDeclaration": 3932,
                                       "type": "function (bool) pure",
                                       "value": "assert"
                                     },
@@ -5492,7 +5492,7 @@
                                                   "isPure": false,
                                                   "lValueRequested": false,
                                                   "member_name": "minCap",
-                                                  "referencedDeclaration": 1713,
+                                                  "referencedDeclaration": 1835,
                                                   "type": "function () view external returns (uint256)"
                                                 },
                                                 "children": [
@@ -5849,7 +5849,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "plus",
-                                  "referencedDeclaration": 3222,
+                                  "referencedDeclaration": 3341,
                                   "type": "function (uint256,uint256) returns (uint256)"
                                 },
                                 "children": [
@@ -6014,7 +6014,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "plus",
-                                  "referencedDeclaration": 3222,
+                                  "referencedDeclaration": 3341,
                                   "type": "function (uint256,uint256) returns (uint256)"
                                 },
                                 "children": [
@@ -6150,7 +6150,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "plus",
-                                  "referencedDeclaration": 3222,
+                                  "referencedDeclaration": 3341,
                                   "type": "function (uint256,uint256) returns (uint256)"
                                 },
                                 "children": [
@@ -6257,7 +6257,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "plus",
-                                  "referencedDeclaration": 3222,
+                                  "referencedDeclaration": 3341,
                                   "type": "function (uint256,uint256) returns (uint256)"
                                 },
                                 "children": [
@@ -6337,7 +6337,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -6568,7 +6568,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -7044,7 +7044,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3835,
+                                  "referencedDeclaration": 3941,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -7199,7 +7199,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -7225,7 +7225,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 1729,
+                      "referencedDeclaration": 1850,
                       "type": "modifier ()",
                       "value": "stopInEmergency"
                     },
@@ -7268,7 +7268,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -8064,7 +8064,7 @@
                                               "isPure": false,
                                               "lValueRequested": false,
                                               "member_name": "halted",
-                                              "referencedDeclaration": 1721,
+                                              "referencedDeclaration": 1843,
                                               "type": "function () view external returns (bool)"
                                             },
                                             "children": [
@@ -8434,7 +8434,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -8460,7 +8460,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 1729,
+                      "referencedDeclaration": 1850,
                       "type": "modifier ()",
                       "value": "stopInEmergency"
                     },
@@ -8503,7 +8503,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -8880,7 +8880,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -8923,7 +8923,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -9098,7 +9098,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -9324,7 +9324,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -9573,7 +9573,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -9616,7 +9616,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -9693,7 +9693,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -9829,7 +9829,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -9926,7 +9926,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -10020,7 +10020,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -10049,7 +10049,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3837,
+                                  "referencedDeclaration": 3943,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -10828,7 +10828,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -10871,7 +10871,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -10948,7 +10948,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -10977,7 +10977,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3837,
+                                  "referencedDeclaration": 3943,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -11042,7 +11042,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -11170,7 +11170,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -11298,7 +11298,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -11926,7 +11926,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -12003,7 +12003,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -12288,7 +12288,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3862,
+                              "referencedDeclaration": 3968,
                               "type": "contract CrowdsaleExt",
                               "value": "this"
                             },
@@ -12838,7 +12838,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -12915,7 +12915,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -13051,7 +13051,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -13080,7 +13080,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3837,
+                                  "referencedDeclaration": 3943,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -13145,7 +13145,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -13205,7 +13205,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 3835,
+                                      "referencedDeclaration": 3941,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -13261,7 +13261,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -13626,7 +13626,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "minus",
-                                  "referencedDeclaration": 3198,
+                                  "referencedDeclaration": 3317,
                                   "type": "function (uint256,uint256) returns (uint256)"
                                 },
                                 "children": [
@@ -15097,7 +15097,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -15140,7 +15140,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -15276,7 +15276,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -15370,7 +15370,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -15796,7 +15796,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -15839,7 +15839,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -15953,7 +15953,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -16050,7 +16050,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -16474,7 +16474,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -16517,7 +16517,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -16594,7 +16594,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -16654,7 +16654,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -16683,7 +16683,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3837,
+                                  "referencedDeclaration": 3943,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -16748,7 +16748,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -16842,7 +16842,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -16871,7 +16871,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3837,
+                                  "referencedDeclaration": 3943,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -17054,7 +17054,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -17201,7 +17201,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3862,
+                              "referencedDeclaration": 3968,
                               "type": "contract CrowdsaleExt",
                               "value": "this"
                             },
@@ -17514,7 +17514,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 3826,
+                                      "referencedDeclaration": 3932,
                                       "type": "function (bool) pure",
                                       "value": "assert"
                                     },
@@ -17823,7 +17823,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -17866,7 +17866,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -17943,7 +17943,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -18003,7 +18003,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -18032,7 +18032,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3837,
+                                  "referencedDeclaration": 3943,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -18097,7 +18097,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -18191,7 +18191,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -18220,7 +18220,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3837,
+                                  "referencedDeclaration": 3943,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -18403,7 +18403,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -18550,7 +18550,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3862,
+                              "referencedDeclaration": 3968,
                               "type": "contract CrowdsaleExt",
                               "value": "this"
                             },
@@ -18897,7 +18897,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 3826,
+                                      "referencedDeclaration": 3932,
                                       "type": "function (bool) pure",
                                       "value": "assert"
                                     },
@@ -19167,7 +19167,7 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "PricingStrategy",
-                          "referencedDeclaration": 2499,
+                          "referencedDeclaration": 2617,
                           "type": "contract PricingStrategy"
                         },
                         "id": 1255,
@@ -19208,7 +19208,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -19251,7 +19251,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -19293,7 +19293,7 @@
                                     "attributes": {
                                       "argumentTypes": [
                                         {
-                                          "typeIdentifier": "t_contract$_PricingStrategy_$2499",
+                                          "typeIdentifier": "t_contract$_PricingStrategy_$2617",
                                           "typeString": "contract PricingStrategy"
                                         }
                                       ],
@@ -19426,7 +19426,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -19468,7 +19468,7 @@
                                     "attributes": {
                                       "argumentTypes": [
                                         {
-                                          "typeIdentifier": "t_contract$_PricingStrategy_$2499",
+                                          "typeIdentifier": "t_contract$_PricingStrategy_$2617",
                                           "typeString": "contract PricingStrategy"
                                         }
                                       ],
@@ -19652,7 +19652,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -19700,7 +19700,7 @@
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "member_name": "isPricingStrategy",
-                                      "referencedDeclaration": 2458,
+                                      "referencedDeclaration": 2576,
                                       "type": "function () view external returns (bool)"
                                     },
                                     "children": [
@@ -19823,7 +19823,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 3725,
+                      "referencedDeclaration": 3831,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -19866,7 +19866,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -20356,7 +20356,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "isSane",
-                              "referencedDeclaration": 2468,
+                              "referencedDeclaration": 2586,
                               "type": "function (address) view external returns (bool)"
                             },
                             "children": [
@@ -20419,7 +20419,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 3862,
+                                  "referencedDeclaration": 3968,
                                   "type": "contract CrowdsaleExt",
                                   "value": "this"
                                 },
@@ -20885,7 +20885,7 @@
                                               "isPure": false,
                                               "lValueRequested": false,
                                               "member_name": "isSane",
-                                              "referencedDeclaration": 2468,
+                                              "referencedDeclaration": 2586,
                                               "type": "function (address) view external returns (bool)"
                                             },
                                             "children": [
@@ -20948,7 +20948,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 3862,
+                                                  "referencedDeclaration": 3968,
                                                   "type": "contract CrowdsaleExt",
                                                   "value": "this"
                                                 },
@@ -21054,7 +21054,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 3827,
+                                                  "referencedDeclaration": 3933,
                                                   "type": "block",
                                                   "value": "block"
                                                 },
@@ -21184,7 +21184,7 @@
                                                           "overloadedDeclarations": [
                                                             null
                                                           ],
-                                                          "referencedDeclaration": 3827,
+                                                          "referencedDeclaration": 3933,
                                                           "type": "block",
                                                           "value": "block"
                                                         },
@@ -21677,7 +21677,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 3826,
+                              "referencedDeclaration": 3932,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -22237,5 +22237,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-03-14T12:46:16.830Z"
+  "updatedAt": "2018-05-04T17:56:21.669Z"
 }

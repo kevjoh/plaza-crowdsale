@@ -28,9 +28,9 @@ contract FinalizeAgent {
    */
   function isSane() public constant returns (bool);
 
-  function distributeReservedTokens(uint reservedTokensDistributionBatch) public;
+  function distributeReservedTokens(uint reservedTokensDistributionBatch);
 
   /** Called once by crowdsale finalize() if the sale was success. */
-  function finalizeCrowdsale() public;
+  function finalizeCrowdsale();
 
 }

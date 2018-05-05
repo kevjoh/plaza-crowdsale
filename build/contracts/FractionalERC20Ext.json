@@ -210,266 +210,151 @@
   "source": "pragma solidity ^0.4.18;\n\nimport \"zeppelin-solidity/contracts/token/ERC20.sol\";\n\n/**\n * A token that defines fractional units as decimals.\n */\ncontract FractionalERC20Ext is ERC20 {\n\n  uint public decimals;\n  uint public minCap;\n\n}",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FractionalERC20Ext.sol",
   "ast": {
-    "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FractionalERC20Ext.sol",
-    "exportedSymbols": {
-      "FractionalERC20Ext": [
-        210
-      ]
+    "attributes": {
+      "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FractionalERC20Ext.sol",
+      "exportedSymbols": {
+        "FractionalERC20Ext": [
+          1836
+        ]
+      }
     },
-    "id": 211,
-    "nodeType": "SourceUnit",
-    "nodes": [
+    "children": [
       {
-        "id": 202,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".18"
-        ],
-        "nodeType": "PragmaDirective",
-        "src": "0:24:1"
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".18"
+          ]
+        },
+        "id": 1828,
+        "name": "PragmaDirective",
+        "src": "0:24:4"
       },
       {
-        "absolutePath": "zeppelin-solidity/contracts/token/ERC20.sol",
-        "file": "zeppelin-solidity/contracts/token/ERC20.sol",
-        "id": 203,
-        "nodeType": "ImportDirective",
-        "scope": 211,
-        "sourceUnit": 1582,
-        "src": "26:53:1",
-        "symbolAliases": [],
-        "unitAlias": ""
+        "attributes": {
+          "SourceUnit": 3901,
+          "absolutePath": "zeppelin-solidity/contracts/token/ERC20.sol",
+          "file": "zeppelin-solidity/contracts/token/ERC20.sol",
+          "scope": 1837,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 1829,
+        "name": "ImportDirective",
+        "src": "26:53:4"
       },
       {
-        "baseContracts": [
+        "attributes": {
+          "contractDependencies": [
+            3900,
+            3929
+          ],
+          "contractKind": "contract",
+          "documentation": "A token that defines fractional units as decimals.",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            1836,
+            3900,
+            3929
+          ],
+          "name": "FractionalERC20Ext",
+          "scope": 1837
+        },
+        "children": [
           {
-            "arguments": [],
-            "baseName": {
-              "contractScope": null,
-              "id": 204,
-              "name": "ERC20",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1581,
-              "src": "174:5:1",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$1581",
-                "typeString": "contract ERC20"
+            "attributes": {
+              "arguments": [
+                null
+              ]
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "ERC20",
+                  "referencedDeclaration": 3900,
+                  "type": "contract ERC20"
+                },
+                "id": 1830,
+                "name": "UserDefinedTypeName",
+                "src": "174:5:4"
               }
-            },
-            "id": 205,
-            "nodeType": "InheritanceSpecifier",
-            "src": "174:5:1"
-          }
-        ],
-        "contractDependencies": [
-          1581,
-          1610
-        ],
-        "contractKind": "contract",
-        "documentation": "A token that defines fractional units as decimals.",
-        "fullyImplemented": false,
-        "id": 210,
-        "linearizedBaseContracts": [
-          210,
-          1581,
-          1610
-        ],
-        "name": "FractionalERC20Ext",
-        "nodeType": "ContractDefinition",
-        "nodes": [
-          {
-            "constant": false,
-            "id": 207,
-            "name": "decimals",
-            "nodeType": "VariableDeclaration",
-            "scope": 210,
-            "src": "185:20:1",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_uint256",
-              "typeString": "uint256"
-            },
-            "typeName": {
-              "id": 206,
-              "name": "uint",
-              "nodeType": "ElementaryTypeName",
-              "src": "185:4:1",
-              "typeDescriptions": {
-                "typeIdentifier": "t_uint256",
-                "typeString": "uint256"
-              }
-            },
-            "value": null,
-            "visibility": "public"
+            ],
+            "id": 1831,
+            "name": "InheritanceSpecifier",
+            "src": "174:5:4"
           },
           {
-            "constant": false,
-            "id": 209,
-            "name": "minCap",
-            "nodeType": "VariableDeclaration",
-            "scope": 210,
-            "src": "209:18:1",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_uint256",
-              "typeString": "uint256"
+            "attributes": {
+              "constant": false,
+              "name": "decimals",
+              "scope": 1836,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
             },
-            "typeName": {
-              "id": 208,
-              "name": "uint",
-              "nodeType": "ElementaryTypeName",
-              "src": "209:4:1",
-              "typeDescriptions": {
-                "typeIdentifier": "t_uint256",
-                "typeString": "uint256"
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 1832,
+                "name": "ElementaryTypeName",
+                "src": "185:4:4"
               }
-            },
-            "value": null,
-            "visibility": "public"
-          }
-        ],
-        "scope": 211,
-        "src": "143:88:1"
-      }
-    ],
-    "src": "0:231:1"
-  },
-  "legacyAST": {
-    "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FractionalERC20Ext.sol",
-    "exportedSymbols": {
-      "FractionalERC20Ext": [
-        210
-      ]
-    },
-    "id": 211,
-    "nodeType": "SourceUnit",
-    "nodes": [
-      {
-        "id": 202,
-        "literals": [
-          "solidity",
-          "^",
-          "0.4",
-          ".18"
-        ],
-        "nodeType": "PragmaDirective",
-        "src": "0:24:1"
-      },
-      {
-        "absolutePath": "zeppelin-solidity/contracts/token/ERC20.sol",
-        "file": "zeppelin-solidity/contracts/token/ERC20.sol",
-        "id": 203,
-        "nodeType": "ImportDirective",
-        "scope": 211,
-        "sourceUnit": 1582,
-        "src": "26:53:1",
-        "symbolAliases": [],
-        "unitAlias": ""
-      },
-      {
-        "baseContracts": [
-          {
-            "arguments": [],
-            "baseName": {
-              "contractScope": null,
-              "id": 204,
-              "name": "ERC20",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1581,
-              "src": "174:5:1",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$1581",
-                "typeString": "contract ERC20"
-              }
-            },
-            "id": 205,
-            "nodeType": "InheritanceSpecifier",
-            "src": "174:5:1"
-          }
-        ],
-        "contractDependencies": [
-          1581,
-          1610
-        ],
-        "contractKind": "contract",
-        "documentation": "A token that defines fractional units as decimals.",
-        "fullyImplemented": false,
-        "id": 210,
-        "linearizedBaseContracts": [
-          210,
-          1581,
-          1610
-        ],
-        "name": "FractionalERC20Ext",
-        "nodeType": "ContractDefinition",
-        "nodes": [
-          {
-            "constant": false,
-            "id": 207,
-            "name": "decimals",
-            "nodeType": "VariableDeclaration",
-            "scope": 210,
-            "src": "185:20:1",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_uint256",
-              "typeString": "uint256"
-            },
-            "typeName": {
-              "id": 206,
-              "name": "uint",
-              "nodeType": "ElementaryTypeName",
-              "src": "185:4:1",
-              "typeDescriptions": {
-                "typeIdentifier": "t_uint256",
-                "typeString": "uint256"
-              }
-            },
-            "value": null,
-            "visibility": "public"
+            ],
+            "id": 1833,
+            "name": "VariableDeclaration",
+            "src": "185:20:4"
           },
           {
-            "constant": false,
-            "id": 209,
-            "name": "minCap",
-            "nodeType": "VariableDeclaration",
-            "scope": 210,
-            "src": "209:18:1",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_uint256",
-              "typeString": "uint256"
+            "attributes": {
+              "constant": false,
+              "name": "minCap",
+              "scope": 1836,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
             },
-            "typeName": {
-              "id": 208,
-              "name": "uint",
-              "nodeType": "ElementaryTypeName",
-              "src": "209:4:1",
-              "typeDescriptions": {
-                "typeIdentifier": "t_uint256",
-                "typeString": "uint256"
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 1834,
+                "name": "ElementaryTypeName",
+                "src": "209:4:4"
               }
-            },
-            "value": null,
-            "visibility": "public"
+            ],
+            "id": 1835,
+            "name": "VariableDeclaration",
+            "src": "209:18:4"
           }
         ],
-        "scope": 211,
-        "src": "143:88:1"
+        "id": 1836,
+        "name": "ContractDefinition",
+        "src": "143:88:4"
       }
     ],
-    "src": "0:231:1"
+    "id": 1837,
+    "name": "SourceUnit",
+    "src": "0:231:4"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-14T19:20:03.050Z"
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-05-04T17:56:21.672Z"
 }

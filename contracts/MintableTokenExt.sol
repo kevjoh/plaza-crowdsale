@@ -50,13 +50,15 @@ contract MintableTokenExt is StandardToken, Ownable {
 
   modifier onlyMintAgent() {
     // Only crowdsale contracts are allowed to mint new tokens
-    assert(!mintAgents[msg.sender]);
+    if(!mintAgents[msg.sender]) {
+        throw;
+    }
     _;
   }
 
   /** Make sure we are not done yet. */
   modifier canMint() {
-    assert(mintingFinished);
+    if(mintingFinished) throw;
     _;
   }
 

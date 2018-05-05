@@ -44,36 +44,77 @@ async function liveDeploy(deployer, accounts){
 }
 */
 
-var SafeMathLibExt = artifacts.require("./SafeMathLibExt.sol");
+var Math_Library = artifacts.require("./SafeMathLibExt.sol");
+var Crowdsale_Token = artifacts.require("./CrowdsaleTokenExt.sol");
 
-var CrowdsaleTokenExt = artifacts.require("./CrowdsaleTokenExt.sol");
-
-// var PricingStrategy_Tier_1 = artifacts.require("./PricingStrategy.sol");
+var Pricing_Strategy = artifacts.require("./PricingStrategy.sol");
 /* var PricingStrategy_Tier_2 = artifacts.require("./PricingStrategy.sol");
 var PricingStrategy_Tier_3 = artifacts.require("./PricingStrategy.sol");
 var PricingStrategy_Tier_4 = artifacts.require("./PricingStrategy.sol");
 var PricingStrategy_Tier_5 = artifacts.require("./PricingStrategy.sol"); */
 
 module.exports = function(deployer) {
-    deployer.deploy(SafeMathLibExt);
+    deployer.deploy(
+        Math_Library
+    ).then(() => {
+        return deployer.link(
+            Math_Library,
+            [
+                Crowdsale_Token,
+                Pricing_Strategy
+            ]
+        ).then(() => {
+            return deployer.deploy(
+                Crowdsale_Token,
+                'Test Token',
+                'PTEST',
+                '18',
+                true,
+                '0'
+            ).then(() => {
+                return deployer.deploy(
+                    Pricing_Strategy
+                )
+            });
+        });
+    });
+};
 
-    deployer.link(SafeMathLibExt, CrowdsaleTokenExt);
-    tokenDeploy(deployer);
+
+/* module.exports = function(deployer) {
+    deployer.deploy(Math_Library);
+
+    deployer.link(Math_Library, [Crowdsale_Token, Pricing_Strategy]);
+
+    //tokenDeploy(deployer);
+
+    const tokenName = "P Test Token";
+    const tokenSymbol = "PTEST";
+    const beginSupply = "0";
+    const decimals = "18";
+    const mintable = true;
+    const minCap = "0";
+    
+    deployer.deploy(Crowdsale_Token, tokenName, tokenSymbol, beginSupply, decimals, mintable, minCap);
+
+    deployer.deploy(Pricing_Strategy)
+
+
 
     //deployer.link(SafeMathLibExt, PricingStrategy_Tier_1);
     //priceDeploy_Tier_1(deployer);
 
-    /* deployer.link(SafeMathLibExt, [PricingStrategy_Tier_1, PricingStrategy_Tier_2, PricingStrategy_Tier_3, PricingStrategy_Tier_4, PricingStrategy_Tier_5);
+    deployer.link(SafeMathLibExt, [PricingStrategy_Tier_1, PricingStrategy_Tier_2, PricingStrategy_Tier_3, PricingStrategy_Tier_4, PricingStrategy_Tier_5);
     priceDeploy_Tier_1(deployer);
     priceDeploy_Tier_2(deployer);
     priceDeploy_Tier_3(deployer);
     priceDeploy_Tier_4(deployer);
-    priceDeploy_Tier_5(deployer); */
-};
+    priceDeploy_Tier_5(deployer);
+}; */
 
 function tokenDeploy(deployer){
 
-    const tokenName = "Plaza Test Token";
+    const tokenName = "P Test Token";
 
     const tokenSymbol = "PTEST";
 
@@ -86,7 +127,7 @@ function tokenDeploy(deployer){
     const minCap = "0";
 
     // string _name, string _symbol, uint _initialSupply, uint _decimals, bool _mintable, uint _globalMinCap
-    return deployer.deploy(CrowdsaleTokenExt, tokenName, tokenSymbol, beginSupply, decimals, mintable, minCap);
+    return deployer.deploy(Crowdsale_Token, tokenName, tokenSymbol, beginSupply, decimals, mintable, minCap);
 }
 
 /* function priceDeploy_Tier_1(deployer){

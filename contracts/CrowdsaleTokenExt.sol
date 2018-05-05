@@ -68,14 +68,16 @@ contract CrowdsaleTokenExt is ReleasableToken, MintableTokenExt, UpgradeableToke
     // Create initially all balance on the team multisig
     balances[owner] = totalSupply;
 
-    if (totalSupply > 0) {
+    if(totalSupply > 0) {
       Minted(owner, totalSupply);
     }
 
     // No more new supply allowed after the token creation
-    if (!_mintable) {
+    if(!_mintable) {
       mintingFinished = true;
-      assert(totalSupply == 0); // Cannot create a token without supply and no minting
+      if(totalSupply == 0) {
+        throw; // Cannot create a token without supply and no minting
+      }
     }
   }
 

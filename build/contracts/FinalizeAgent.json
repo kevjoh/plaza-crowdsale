@@ -71,7 +71,7 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.18;\n\n/**\n * Finalize agent defines what happens at the end of succeseful crowdsale.\n *\n * - Allocate tokens for founders, bounties and community\n * - Make tokens transferable\n * - etc.\n */\ncontract FinalizeAgent {\n\n  bool public reservedTokensAreDistributed = false;\n\n  function isFinalizeAgent() public constant returns(bool) {\n    return true;\n  }\n\n  /** Return true if we can run finalizeCrowdsale() properly.\n   *\n   * This is a safety check function that doesn't allow crowdsale to begin\n   * unless the finalizer has been set up properly.\n   */\n  function isSane() public constant returns (bool);\n\n  function distributeReservedTokens(uint reservedTokensDistributionBatch) public;\n\n  /** Called once by crowdsale finalize() if the sale was success. */\n  function finalizeCrowdsale() public;\n\n}",
+  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.18;\n\n/**\n * Finalize agent defines what happens at the end of succeseful crowdsale.\n *\n * - Allocate tokens for founders, bounties and community\n * - Make tokens transferable\n * - etc.\n */\ncontract FinalizeAgent {\n\n  bool public reservedTokensAreDistributed = false;\n\n  function isFinalizeAgent() public constant returns(bool) {\n    return true;\n  }\n\n  /** Return true if we can run finalizeCrowdsale() properly.\n   *\n   * This is a safety check function that doesn't allow crowdsale to begin\n   * unless the finalizer has been set up properly.\n   */\n  function isSane() public constant returns (bool);\n\n  function distributeReservedTokens(uint reservedTokensDistributionBatch);\n\n  /** Called once by crowdsale finalize() if the sale was success. */\n  function finalizeCrowdsale();\n\n}",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FinalizeAgent.sol",
   "ast": {
     "attributes": {
@@ -380,12 +380,12 @@
                 "children": [],
                 "id": 1699,
                 "name": "ParameterList",
-                "src": "942:0:2"
+                "src": "935:0:2"
               }
             ],
             "id": 1700,
             "name": "FunctionDefinition",
-            "src": "864:79:2"
+            "src": "864:72:2"
           },
           {
             "attributes": {
@@ -413,7 +413,7 @@
                 "children": [],
                 "id": 1701,
                 "name": "ParameterList",
-                "src": "1043:2:2"
+                "src": "1036:2:2"
               },
               {
                 "attributes": {
@@ -424,22 +424,22 @@
                 "children": [],
                 "id": 1702,
                 "name": "ParameterList",
-                "src": "1052:0:2"
+                "src": "1038:0:2"
               }
             ],
             "id": 1703,
             "name": "FunctionDefinition",
-            "src": "1017:36:2"
+            "src": "1010:29:2"
           }
         ],
         "id": 1704,
         "name": "ContractDefinition",
-        "src": "447:609:2"
+        "src": "447:595:2"
       }
     ],
     "id": 1705,
     "name": "SourceUnit",
-    "src": "237:819:2"
+    "src": "237:805:2"
   },
   "compiler": {
     "name": "solc",
@@ -447,5 +447,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-03-14T12:46:16.817Z"
+  "updatedAt": "2018-05-04T17:56:21.661Z"
 }

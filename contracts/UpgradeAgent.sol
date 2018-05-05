@@ -13,6 +13,7 @@ pragma solidity ^0.4.18;
  * Upgrade agent itself can be the token contract, or just a middle man contract doing the heavy lifting.
  */
 contract UpgradeAgent {
+
   uint public originalSupply;
 
   /** Interface marker */
@@ -21,4 +22,5 @@ contract UpgradeAgent {
   }
 
   function upgradeFrom(address _from, uint256 _value) public;
+
 }
