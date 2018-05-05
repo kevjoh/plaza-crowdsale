@@ -138,17 +138,26 @@ contract CrowdsaleExt is Haltable {
     setPricingStrategy(_pricingStrategy);
 
     multisigWallet = _multisigWallet;
-    assert(multisigWallet == 0);
-    assert(_start == 0);
+    if(multisigWallet == 0) {
+        throw;
+    }
+
+    if(_start == 0) {
+        throw;
+    }
 
     startsAt = _start;
 
-    assert(_end == 0);
+    if(_end == 0) {
+        throw;
+    }
 
     endsAt = _end;
 
     // Don't mess the dates
-    assert(startsAt >= endsAt);
+    if(startsAt >= endsAt) {
+        throw;
+    }
 
     // Minimum funding goal can be zero
     minimumFundingGoal = _minimumFundingGoal;
@@ -178,14 +187,16 @@ contract CrowdsaleExt is Haltable {
   function investInternal(address receiver, uint128 customerId) stopInEmergency private {
 
     // Determine if it's a good time to accept investment from this participant
-    if (getState() == State.PreFunding) {
+    if(getState() == State.PreFunding) {
       // Are we whitelisted for early deposit
       throw;
-    } else if (getState() == State.Funding) {
+    } else if(getState() == State.Funding) {
       // Retail participants can only come in when the crowdsale is running
       // pass
-      if (isWhiteListed) {
-        assert(!earlyParticipantWhitelist[receiver].status);
+      if(isWhiteListed) {
+        if(!earlyParticipantWhitelist[receiver].status) {
+          throw;
+        }
       }
     } else {
       // Unwanted state
@@ -197,20 +208,30 @@ contract CrowdsaleExt is Haltable {
     // Account presale sales separately, so that they do not count against pricing tranches
     uint tokenAmount = pricingStrategy.calculatePrice(weiAmount, weiRaised, tokensSold, msg.sender, token.decimals());
 
-    assert(tokenAmount == 0); // Dust transaction
+    if(tokenAmount == 0) {
+      // Dust transaction
+      throw;
+    }
 
-    if (isWhiteListed) {
-      assert(tokenAmount < earlyParticipantWhitelist[receiver].minCap && tokenAmountOf[receiver] == 0); // tokenAmount < minCap for investor
+    if(isWhiteListed) {
+      if(tokenAmount < earlyParticipantWhitelist[receiver].minCap && tokenAmountOf[receiver] == 0) {
+        // tokenAmount < minCap for investor
+        throw;
+      }
 
       // Check that we did not bust the investor's cap
-      assert(isBreakingInvestorCap(receiver, tokenAmount));
+      if (isBreakingInvestorCap(receiver, tokenAmount)) {
+        throw;
+      }
 
       updateInheritedEarlyParticipantWhitelist(receiver, tokenAmount);
     } else {
-      assert(tokenAmount < token.minCap() && tokenAmountOf[receiver] == 0);
+      if(tokenAmount < token.minCap() && tokenAmountOf[receiver] == 0) {
+        throw;
+      }
     }
 
-    if (investedAmountOf[receiver] == 0) {
+    if(investedAmountOf[receiver] == 0) {
        // A new investor
        investorCount++;
     }
@@ -224,12 +245,14 @@ contract CrowdsaleExt is Haltable {
     tokensSold = tokensSold.plus(tokenAmount);
 
     // Check that we did not bust the cap
-    assert(isBreakingCap(weiAmount, tokenAmount, weiRaised, tokensSold));
+    if(isBreakingCap(weiAmount, tokenAmount, weiRaised, tokensSold)) {
+      throw;
+    }
 
     assignTokens(receiver, tokenAmount);
 
     // Pocket the money
-    assert(!multisigWallet.send(weiAmount));
+    if(!multisigWallet.send(weiAmount)) throw;
 
     // Tell us invest was success
     Invested(receiver, weiAmount, tokenAmount, customerId);
@@ -253,10 +276,12 @@ contract CrowdsaleExt is Haltable {
 
   function distributeReservedTokens(uint reservedTokensDistributionBatch) public inState(State.Success) onlyOwner stopInEmergency {
     // Already finalized
-    assert(finalized);
+    if(finalized) {
+      throw;
+    }
 
     // Finalizing is optional. We only call it if we are given a finalizing agent.
-    if (address(finalizeAgent) != address(0)) {
+    if(address(finalizeAgent) != address(0)) {
       finalizeAgent.distributeReservedTokens(reservedTokensDistributionBatch);
     }
   }
@@ -267,9 +292,7 @@ contract CrowdsaleExt is Haltable {
 
   function canDistributeReservedTokens() public constant returns(bool) {
     CrowdsaleExt lastTierCntrct = CrowdsaleExt(getLastTier());
-    if ((lastTierCntrct.getState() == State.Success) && !lastTierCntrct.halted() && !lastTierCntrct.finalized() && !lastTierCntrct.areReservedTokensDistributed()) {
-      return true;
-    }
+    if ((lastTierCntrct.getState() == State.Success) && !lastTierCntrct.halted() && !lastTierCntrct.finalized() && !lastTierCntrct.areReservedTokensDistributed()) return true;
     return false;
   }
 
@@ -281,10 +304,12 @@ contract CrowdsaleExt is Haltable {
   function finalize() public inState(State.Success) onlyOwner stopInEmergency {
 
     // Already finalized
-    assert(finalized);
+    if(finalized) {
+      throw;
+    }
 
     // Finalizing is optional. We only call it if we are given a finalizing agent.
-    if (address(finalizeAgent) != address(0)) {
+    if(address(finalizeAgent) != address(0)) {
       finalizeAgent.finalizeCrowdsale();
     }
 
@@ -302,14 +327,16 @@ contract CrowdsaleExt is Haltable {
     finalizeAgent = addr;
 
     // Don't allow setting bad agent
-    assert(!finalizeAgent.isFinalizeAgent());
+    if(!finalizeAgent.isFinalizeAgent()) {
+      throw;
+    }
   }
 
   /**
    * Allow addresses to do early participation.
    */
   function setEarlyParticipantWhitelist(address addr, bool status, uint minCap, uint maxCap) public onlyOwner {
-    assert(!isWhiteListed);
+    if (!isWhiteListed) throw;
     assert(addr != address(0));
     assert(maxCap > 0);
     assert(minCap <= maxCap);
@@ -326,7 +353,7 @@ contract CrowdsaleExt is Haltable {
   }
 
   function setEarlyParticipantWhitelistMultiple(address[] addrs, bool[] statuses, uint[] minCaps, uint[] maxCaps) public onlyOwner {
-    assert(!isWhiteListed);
+    if (!isWhiteListed) throw;
     assert(now <= endsAt);
     assert(addrs.length == statuses.length);
     assert(statuses.length == minCaps.length);
@@ -337,8 +364,8 @@ contract CrowdsaleExt is Haltable {
   }
 
   function updateInheritedEarlyParticipantWhitelist(address reciever, uint tokensBought) private {
-    assert(!isWhiteListed);
-    assert(tokensBought < earlyParticipantWhitelist[reciever].minCap && tokenAmountOf[reciever] == 0);
+    if (!isWhiteListed) throw;
+    if (tokensBought < earlyParticipantWhitelist[reciever].minCap && tokenAmountOf[reciever] == 0) throw;
 
     uint8 tierPosition = getTierPosition(this);
 
@@ -349,11 +376,11 @@ contract CrowdsaleExt is Haltable {
   }
 
   function updateEarlyParticipantWhitelist(address addr, uint tokensBought) public {
-    assert(!isWhiteListed);
+    if (!isWhiteListed) throw;
     assert(addr != address(0));
     assert(now <= endsAt);
     assert(isTierJoined(msg.sender));
-    assert(tokensBought < earlyParticipantWhitelist[addr].minCap && tokenAmountOf[addr] == 0);
+    if (tokensBought < earlyParticipantWhitelist[addr].minCap && tokenAmountOf[addr] == 0) throw;
     //if (addr != msg.sender && contractAddr != msg.sender) throw;
     uint newMaxCap = earlyParticipantWhitelist[addr].maxCap;
     newMaxCap = newMaxCap.minus(tokensBought);
@@ -419,7 +446,7 @@ contract CrowdsaleExt is Haltable {
     assert(now <= startsAt);
 
     CrowdsaleExt lastTierCntrct = CrowdsaleExt(getLastTier());
-    assert(lastTierCntrct.finalized());
+    if (lastTierCntrct.finalized()) throw;
 
     uint8 tierPosition = getTierPosition(this);
 
@@ -446,12 +473,13 @@ contract CrowdsaleExt is Haltable {
   function setEndsAt(uint time) public onlyOwner {
     assert(!finalized);
     assert(isUpdatable);
-    assert(now <= time); // Don't change past
+    assert(now <= time);// Don't change past
     assert(startsAt <= time);
     assert(now <= endsAt);
 
     CrowdsaleExt lastTierCntrct = CrowdsaleExt(getLastTier());
-    assert(lastTierCntrct.finalized());
+    if (lastTierCntrct.finalized()) throw;
+
 
     uint8 tierPosition = getTierPosition(this);
 
@@ -475,7 +503,9 @@ contract CrowdsaleExt is Haltable {
     pricingStrategy = _pricingStrategy;
 
     // Don't allow setting bad agent
-    assert(!pricingStrategy.isPricingStrategy());
+    if(!pricingStrategy.isPricingStrategy()) {
+      throw;
+    }
   }
 
   /**
@@ -486,8 +516,12 @@ contract CrowdsaleExt is Haltable {
    * then multisig address stays locked for the safety reasons.
    */
   function setMultisig(address addr) public onlyOwner {
+
     // Change
-    assert(investorCount > MAX_INVESTMENTS_BEFORE_MULTISIG_CHANGE);
+    if(investorCount > MAX_INVESTMENTS_BEFORE_MULTISIG_CHANGE) {
+      throw;
+    }
+
     multisigWallet = addr;
   }
 
@@ -518,23 +552,14 @@ contract CrowdsaleExt is Haltable {
    * We make it a function and do not assign the result to a variable, so there is no chance of the variable being stale.
    */
   function getState() public constant returns (State) {
-    if (finalized) {
-        return State.Finalized;
-    } else if (address(finalizeAgent) == 0) {
-        return State.Preparing;
-    } else if (!finalizeAgent.isSane()) {
-        return State.Preparing;
-    } else if (!pricingStrategy.isSane(address(this))) {
-        return State.Preparing;
-    } else if (block.timestamp < startsAt) {
-        return State.PreFunding;
-    } else if (block.timestamp <= endsAt && !isCrowdsaleFull()) {
-        return State.Funding;
-    } else if (isMinimumGoalReached()) {
-        return State.Success;
-    } else {
-        return State.Failure;
-    }
+    if(finalized) return State.Finalized;
+    else if (address(finalizeAgent) == 0) return State.Preparing;
+    else if (!finalizeAgent.isSane()) return State.Preparing;
+    else if (!pricingStrategy.isSane(address(this))) return State.Preparing;
+    else if (block.timestamp < startsAt) return State.PreFunding;
+    else if (block.timestamp <= endsAt && !isCrowdsaleFull()) return State.Funding;
+    else if (isMinimumGoalReached()) return State.Success;
+    else return State.Failure;
   }
 
   /** Interface marker. */
@@ -548,7 +573,7 @@ contract CrowdsaleExt is Haltable {
 
   /** Modified allowing execution only if the crowdsale is currently running.  */
   modifier inState(State state) {
-    assert(getState() != state);
+    if(getState() != state) throw;
     _;
   }
 

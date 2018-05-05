@@ -46,108 +46,90 @@ async function liveDeploy(deployer, accounts){
 
 var Math_Library = artifacts.require("./SafeMathLibExt.sol");
 var Crowdsale_Token = artifacts.require("./CrowdsaleTokenExt.sol");
+var Flat_Price = artifacts.require("./FlatPricingExt.sol");
+var Crowdsale = artifacts.require("./MintedTokenCappedCrowdsaleExt.sol");
 
-var Pricing_Strategy = artifacts.require("./PricingStrategy.sol");
-/* var PricingStrategy_Tier_2 = artifacts.require("./PricingStrategy.sol");
-var PricingStrategy_Tier_3 = artifacts.require("./PricingStrategy.sol");
-var PricingStrategy_Tier_4 = artifacts.require("./PricingStrategy.sol");
-var PricingStrategy_Tier_5 = artifacts.require("./PricingStrategy.sol"); */
+var tier_p1, tier_1, tier_2, tier_3, tier_4;
+
+function latestTime() {
+    return web3.eth.getBlock('latest').timestamp;
+}
+
+const duration = {
+    seconds: function (val) { return val; },
+    minutes: function (val) { return val * this.seconds(60); },
+    hours: function (val) { return val * this.minutes(60); },
+    days: function (val) { return val * this.hours(24); },
+    weeks: function (val) { return val * this.days(7); },
+    years: function (val) { return val * this.days(365); },
+};
+
+const startTime = latestTime() + duration.minutes(15);
+const endTime = startTime + duration.weeks(3);
 
 module.exports = function(deployer) {
     deployer.deploy(
-        Math_Library
+        Math_Library,
+        {overwrite: false}
     ).then(() => {
         return deployer.link(
             Math_Library,
             [
                 Crowdsale_Token,
-                Pricing_Strategy
+                Flat_Price,
+                Crowdsale
             ]
         ).then(() => {
             return deployer.deploy(
                 Crowdsale_Token,
-                'Test Token',
+                'PTest Token',
                 'PTEST',
+                '0',
                 '18',
                 true,
-                '0'
-            ).then(() => {
+                '0',
+                {overwrite: false}
+            ).then(function(instance) {
+                //tier_p1 = instance;
                 return deployer.deploy(
-                    Pricing_Strategy
-                )
+                    Flat_Price,
+                    '166666666666667',
+                    {overwrite: false}
+                ).then(() => {
+                    console.log('startTime:', startTime);
+                    console.log('endTime:', endTime);
+                    console.log('Flat_Price:', Flat_Price.address);
+                    return deployer.deploy(
+                        Crowdsale,
+                        'Presale Tier',
+                        Crowdsale_Token.address,
+                        Flat_Price.address,
+                        '0xda153A415A1d3C1C47365BEAea9272AfC11E7c3D',
+                        startTime,
+                        endTime,
+                        '0',
+                        '624000000',
+                        true,
+                        true,
+                        {overwrite: false}
+                    );
+                });
             });
         });
     });
 };
 
+// CrowdsaleTokenExt(string _name, string _symbol, uint _initialSupply, uint _decimals, bool _mintable, uint _globalMinCap)
+/* function MintedTokenCappedCrowdsaleExt(
+    string _name, 
+    address _token, 
+    PricingStrategy _pricingStrategy, 
+    address _multisigWallet, 
+    uint _start, uint _end, 
+    uint _minimumFundingGoal, 
+    uint _maximumSellableTokens, 
+    bool _isUpdatable, 
+    bool _isWhiteListed
+  ) */
 
-/* module.exports = function(deployer) {
-    deployer.deploy(Math_Library);
-
-    deployer.link(Math_Library, [Crowdsale_Token, Pricing_Strategy]);
-
-    //tokenDeploy(deployer);
-
-    const tokenName = "P Test Token";
-    const tokenSymbol = "PTEST";
-    const beginSupply = "0";
-    const decimals = "18";
-    const mintable = true;
-    const minCap = "0";
-    
-    deployer.deploy(Crowdsale_Token, tokenName, tokenSymbol, beginSupply, decimals, mintable, minCap);
-
-    deployer.deploy(Pricing_Strategy)
-
-
-
-    //deployer.link(SafeMathLibExt, PricingStrategy_Tier_1);
-    //priceDeploy_Tier_1(deployer);
-
-    deployer.link(SafeMathLibExt, [PricingStrategy_Tier_1, PricingStrategy_Tier_2, PricingStrategy_Tier_3, PricingStrategy_Tier_4, PricingStrategy_Tier_5);
-    priceDeploy_Tier_1(deployer);
-    priceDeploy_Tier_2(deployer);
-    priceDeploy_Tier_3(deployer);
-    priceDeploy_Tier_4(deployer);
-    priceDeploy_Tier_5(deployer);
-}; */
-
-function tokenDeploy(deployer){
-
-    const tokenName = "P Test Token";
-
-    const tokenSymbol = "PTEST";
-
-    const beginSupply = "0";
-
-    const decimals = "18";
-
-    const mintable = true;
-
-    const minCap = "0";
-
-    // string _name, string _symbol, uint _initialSupply, uint _decimals, bool _mintable, uint _globalMinCap
-    return deployer.deploy(Crowdsale_Token, tokenName, tokenSymbol, beginSupply, decimals, mintable, minCap);
-}
-
-/* function priceDeploy_Tier_1(deployer){
-     deployer.deploy(PricingStrategy_Tier_1);
-}
-
-function priceDeploy_Tier_2(deployer){
-     deployer.deploy(PricingStrategy_Tier_2);
-}
-
-function priceDeploy_Tier_3(deployer){
-     deployer.deploy(PricingStrategy_Tier_3);
-}
-
-function priceDeploy_Tier_4(deployer){
-     deployer.deploy(PricingStrategy_Tier_4);
-}
-
-function priceDeploy_Tier_5(deployer){
-     deployer.deploy(PricingStrategy_Tier_5);
-}
-
- */
+// CrowdsaleExt(string _name, address _token, PricingStrategy _pricingStrategy, address _multisigWallet, uint _start, uint _end, uint _minimumFundingGoal, bool _isUpdatable, bool _isWhiteListed)

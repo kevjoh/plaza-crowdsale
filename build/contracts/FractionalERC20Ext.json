@@ -214,7 +214,7 @@
       "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FractionalERC20Ext.sol",
       "exportedSymbols": {
         "FractionalERC20Ext": [
-          1836
+          1494
         ]
       }
     },
@@ -228,41 +228,41 @@
             ".18"
           ]
         },
-        "id": 1828,
+        "id": 1486,
         "name": "PragmaDirective",
-        "src": "0:24:4"
+        "src": "0:24:2"
       },
       {
         "attributes": {
-          "SourceUnit": 3901,
+          "SourceUnit": 2790,
           "absolutePath": "zeppelin-solidity/contracts/token/ERC20.sol",
           "file": "zeppelin-solidity/contracts/token/ERC20.sol",
-          "scope": 1837,
+          "scope": 1495,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 1829,
+        "id": 1487,
         "name": "ImportDirective",
-        "src": "26:53:4"
+        "src": "26:53:2"
       },
       {
         "attributes": {
           "contractDependencies": [
-            3900,
-            3929
+            2789,
+            2818
           ],
           "contractKind": "contract",
           "documentation": "A token that defines fractional units as decimals.",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            1836,
-            3900,
-            3929
+            1494,
+            2789,
+            2818
           ],
           "name": "FractionalERC20Ext",
-          "scope": 1837
+          "scope": 1495
         },
         "children": [
           {
@@ -276,23 +276,23 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "ERC20",
-                  "referencedDeclaration": 3900,
+                  "referencedDeclaration": 2789,
                   "type": "contract ERC20"
                 },
-                "id": 1830,
+                "id": 1488,
                 "name": "UserDefinedTypeName",
-                "src": "174:5:4"
+                "src": "174:5:2"
               }
             ],
-            "id": 1831,
+            "id": 1489,
             "name": "InheritanceSpecifier",
-            "src": "174:5:4"
+            "src": "174:5:2"
           },
           {
             "attributes": {
               "constant": false,
               "name": "decimals",
-              "scope": 1836,
+              "scope": 1494,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -305,20 +305,20 @@
                   "name": "uint",
                   "type": "uint256"
                 },
-                "id": 1832,
+                "id": 1490,
                 "name": "ElementaryTypeName",
-                "src": "185:4:4"
+                "src": "185:4:2"
               }
             ],
-            "id": 1833,
+            "id": 1491,
             "name": "VariableDeclaration",
-            "src": "185:20:4"
+            "src": "185:20:2"
           },
           {
             "attributes": {
               "constant": false,
               "name": "minCap",
-              "scope": 1836,
+              "scope": 1494,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -331,24 +331,24 @@
                   "name": "uint",
                   "type": "uint256"
                 },
-                "id": 1834,
+                "id": 1492,
                 "name": "ElementaryTypeName",
-                "src": "209:4:4"
+                "src": "209:4:2"
               }
             ],
-            "id": 1835,
+            "id": 1493,
             "name": "VariableDeclaration",
-            "src": "209:18:4"
+            "src": "209:18:2"
           }
         ],
-        "id": 1836,
+        "id": 1494,
         "name": "ContractDefinition",
-        "src": "143:88:4"
+        "src": "143:88:2"
       }
     ],
-    "id": 1837,
+    "id": 1495,
     "name": "SourceUnit",
-    "src": "0:231:4"
+    "src": "0:231:2"
   },
   "compiler": {
     "name": "solc",
@@ -356,5 +356,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-04T17:56:21.672Z"
+  "updatedAt": "2018-05-05T15:39:18.310Z"
 }

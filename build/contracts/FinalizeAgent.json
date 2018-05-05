@@ -78,7 +78,7 @@
       "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/FinalizeAgent.sol",
       "exportedSymbols": {
         "FinalizeAgent": [
-          1704
+          1484
         ]
       }
     },
@@ -92,9 +92,9 @@
             ".18"
           ]
         },
-        "id": 1679,
+        "id": 1459,
         "name": "PragmaDirective",
-        "src": "237:24:2"
+        "src": "237:24:1"
       },
       {
         "attributes": {
@@ -108,17 +108,17 @@
           "documentation": "Finalize agent defines what happens at the end of succeseful crowdsale.\n * - Allocate tokens for founders, bounties and community\n- Make tokens transferable\n- etc.",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            1704
+            1484
           ],
           "name": "FinalizeAgent",
-          "scope": 1705
+          "scope": 1485
         },
         "children": [
           {
             "attributes": {
               "constant": false,
               "name": "reservedTokensAreDistributed",
-              "scope": 1704,
+              "scope": 1484,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "bool",
@@ -130,9 +130,9 @@
                   "name": "bool",
                   "type": "bool"
                 },
-                "id": 1680,
+                "id": 1460,
                 "name": "ElementaryTypeName",
-                "src": "475:4:2"
+                "src": "475:4:1"
               },
               {
                 "attributes": {
@@ -147,14 +147,14 @@
                   "type": "bool",
                   "value": "false"
                 },
-                "id": 1681,
+                "id": 1461,
                 "name": "Literal",
-                "src": "518:5:2"
+                "src": "518:5:1"
               }
             ],
-            "id": 1682,
+            "id": 1462,
             "name": "VariableDeclaration",
-            "src": "475:48:2"
+            "src": "475:48:1"
           },
           {
             "attributes": {
@@ -166,7 +166,7 @@
               ],
               "name": "isFinalizeAgent",
               "payable": false,
-              "scope": 1704,
+              "scope": 1484,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -179,9 +179,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1683,
+                "id": 1463,
                 "name": "ParameterList",
-                "src": "552:2:2"
+                "src": "552:2:1"
               },
               {
                 "children": [
@@ -189,7 +189,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 1690,
+                      "scope": 1470,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -202,25 +202,25 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 1684,
+                        "id": 1464,
                         "name": "ElementaryTypeName",
-                        "src": "579:4:2"
+                        "src": "579:4:1"
                       }
                     ],
-                    "id": 1685,
+                    "id": 1465,
                     "name": "VariableDeclaration",
-                    "src": "579:4:2"
+                    "src": "579:4:1"
                   }
                 ],
-                "id": 1686,
+                "id": 1466,
                 "name": "ParameterList",
-                "src": "578:6:2"
+                "src": "578:6:1"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 1686
+                      "functionReturnParameters": 1466
                     },
                     "children": [
                       {
@@ -236,24 +236,24 @@
                           "type": "bool",
                           "value": "true"
                         },
-                        "id": 1687,
+                        "id": 1467,
                         "name": "Literal",
-                        "src": "598:4:2"
+                        "src": "598:4:1"
                       }
                     ],
-                    "id": 1688,
+                    "id": 1468,
                     "name": "Return",
-                    "src": "591:11:2"
+                    "src": "591:11:1"
                   }
                 ],
-                "id": 1689,
+                "id": 1469,
                 "name": "Block",
-                "src": "585:22:2"
+                "src": "585:22:1"
               }
             ],
-            "id": 1690,
+            "id": 1470,
             "name": "FunctionDefinition",
-            "src": "528:79:2"
+            "src": "528:79:1"
           },
           {
             "attributes": {
@@ -266,7 +266,7 @@
               ],
               "name": "isSane",
               "payable": false,
-              "scope": 1704,
+              "scope": 1484,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -279,9 +279,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1691,
+                "id": 1471,
                 "name": "ParameterList",
-                "src": "826:2:2"
+                "src": "826:2:1"
               },
               {
                 "children": [
@@ -289,7 +289,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 1695,
+                      "scope": 1475,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -302,24 +302,24 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 1692,
+                        "id": 1472,
                         "name": "ElementaryTypeName",
-                        "src": "854:4:2"
+                        "src": "854:4:1"
                       }
                     ],
-                    "id": 1693,
+                    "id": 1473,
                     "name": "VariableDeclaration",
-                    "src": "854:4:2"
+                    "src": "854:4:1"
                   }
                 ],
-                "id": 1694,
+                "id": 1474,
                 "name": "ParameterList",
-                "src": "853:6:2"
+                "src": "853:6:1"
               }
             ],
-            "id": 1695,
+            "id": 1475,
             "name": "FunctionDefinition",
-            "src": "811:49:2"
+            "src": "811:49:1"
           },
           {
             "attributes": {
@@ -332,7 +332,7 @@
               ],
               "name": "distributeReservedTokens",
               "payable": false,
-              "scope": 1704,
+              "scope": 1484,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -344,7 +344,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "reservedTokensDistributionBatch",
-                      "scope": 1700,
+                      "scope": 1480,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -357,19 +357,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 1696,
+                        "id": 1476,
                         "name": "ElementaryTypeName",
-                        "src": "898:4:2"
+                        "src": "898:4:1"
                       }
                     ],
-                    "id": 1697,
+                    "id": 1477,
                     "name": "VariableDeclaration",
-                    "src": "898:36:2"
+                    "src": "898:36:1"
                   }
                 ],
-                "id": 1698,
+                "id": 1478,
                 "name": "ParameterList",
-                "src": "897:38:2"
+                "src": "897:38:1"
               },
               {
                 "attributes": {
@@ -378,14 +378,14 @@
                   ]
                 },
                 "children": [],
-                "id": 1699,
+                "id": 1479,
                 "name": "ParameterList",
-                "src": "935:0:2"
+                "src": "935:0:1"
               }
             ],
-            "id": 1700,
+            "id": 1480,
             "name": "FunctionDefinition",
-            "src": "864:72:2"
+            "src": "864:72:1"
           },
           {
             "attributes": {
@@ -398,7 +398,7 @@
               ],
               "name": "finalizeCrowdsale",
               "payable": false,
-              "scope": 1704,
+              "scope": 1484,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -411,9 +411,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1701,
+                "id": 1481,
                 "name": "ParameterList",
-                "src": "1036:2:2"
+                "src": "1036:2:1"
               },
               {
                 "attributes": {
@@ -422,24 +422,24 @@
                   ]
                 },
                 "children": [],
-                "id": 1702,
+                "id": 1482,
                 "name": "ParameterList",
-                "src": "1038:0:2"
+                "src": "1038:0:1"
               }
             ],
-            "id": 1703,
+            "id": 1483,
             "name": "FunctionDefinition",
-            "src": "1010:29:2"
+            "src": "1010:29:1"
           }
         ],
-        "id": 1704,
+        "id": 1484,
         "name": "ContractDefinition",
-        "src": "447:595:2"
+        "src": "447:595:1"
       }
     ],
-    "id": 1705,
+    "id": 1485,
     "name": "SourceUnit",
-    "src": "237:805:2"
+    "src": "237:805:1"
   },
   "compiler": {
     "name": "solc",
@@ -447,5 +447,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-04T17:56:21.661Z"
+  "updatedAt": "2018-05-05T15:39:18.310Z"
 }
