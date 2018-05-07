@@ -6,9 +6,11 @@
 
 pragma solidity ^0.4.18;
 
+import './StandardToken.sol';
 import "./UpgradeableToken.sol";
 import "./ReleasableToken.sol";
 import "./MintableTokenExt.sol";
+
 
 /**
  * A crowdsaled token.

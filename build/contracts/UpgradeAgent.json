@@ -52,14 +52,14 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.18;\n\n/**\n * Upgrade agent interface inspired by Lunyr.\n *\n * Upgrade agent transfers tokens to a new contract.\n * Upgrade agent itself can be the token contract, or just a middle man contract doing the heavy lifting.\n */\ncontract UpgradeAgent {\n\n  uint public originalSupply;\n\n  /** Interface marker */\n  function isUpgradeAgent() public constant returns (bool) {\n    return true;\n  }\n\n  function upgradeFrom(address _from, uint256 _value) public;\n\n}\n",
+  "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.18;\n\n/**\n * Upgrade agent interface inspired by Lunyr.\n *\n * Upgrade agent transfers tokens to a new contract.\n * Upgrade agent itself can be the token contract, or just a middle man contract doing the heavy lifting.\n */\ncontract UpgradeAgent {\n\n  uint public originalSupply;\n\n  /** Interface marker */\n  function isUpgradeAgent() public constant returns (bool) {\n    return true;\n  }\n\n  function upgradeFrom(address _from, uint256 _value) public;\n\n}",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/UpgradeAgent.sol",
   "ast": {
     "attributes": {
       "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/UpgradeAgent.sol",
       "exportedSymbols": {
         "UpgradeAgent": [
-          3573
+          3497
         ]
       }
     },
@@ -73,9 +73,9 @@
             ".18"
           ]
         },
-        "id": 3555,
+        "id": 3479,
         "name": "PragmaDirective",
-        "src": "237:24:16"
+        "src": "237:24:15"
       },
       {
         "attributes": {
@@ -89,17 +89,17 @@
           "documentation": "Upgrade agent interface inspired by Lunyr.\n * Upgrade agent transfers tokens to a new contract.\nUpgrade agent itself can be the token contract, or just a middle man contract doing the heavy lifting.",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            3573
+            3497
           ],
           "name": "UpgradeAgent",
-          "scope": 3574
+          "scope": 3498
         },
         "children": [
           {
             "attributes": {
               "constant": false,
               "name": "originalSupply",
-              "scope": 3573,
+              "scope": 3497,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -112,14 +112,14 @@
                   "name": "uint",
                   "type": "uint256"
                 },
-                "id": 3556,
+                "id": 3480,
                 "name": "ElementaryTypeName",
-                "src": "506:4:16"
+                "src": "506:4:15"
               }
             ],
-            "id": 3557,
+            "id": 3481,
             "name": "VariableDeclaration",
-            "src": "506:26:16"
+            "src": "506:26:15"
           },
           {
             "attributes": {
@@ -131,7 +131,7 @@
               ],
               "name": "isUpgradeAgent",
               "payable": false,
-              "scope": 3573,
+              "scope": 3497,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -144,9 +144,9 @@
                   ]
                 },
                 "children": [],
-                "id": 3558,
+                "id": 3482,
                 "name": "ParameterList",
-                "src": "586:2:16"
+                "src": "586:2:15"
               },
               {
                 "children": [
@@ -154,7 +154,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 3565,
+                      "scope": 3489,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -167,25 +167,25 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 3559,
+                        "id": 3483,
                         "name": "ElementaryTypeName",
-                        "src": "614:4:16"
+                        "src": "614:4:15"
                       }
                     ],
-                    "id": 3560,
+                    "id": 3484,
                     "name": "VariableDeclaration",
-                    "src": "614:4:16"
+                    "src": "614:4:15"
                   }
                 ],
-                "id": 3561,
+                "id": 3485,
                 "name": "ParameterList",
-                "src": "613:6:16"
+                "src": "613:6:15"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 3561
+                      "functionReturnParameters": 3485
                     },
                     "children": [
                       {
@@ -201,24 +201,24 @@
                           "type": "bool",
                           "value": "true"
                         },
-                        "id": 3562,
+                        "id": 3486,
                         "name": "Literal",
-                        "src": "633:4:16"
+                        "src": "633:4:15"
                       }
                     ],
-                    "id": 3563,
+                    "id": 3487,
                     "name": "Return",
-                    "src": "626:11:16"
+                    "src": "626:11:15"
                   }
                 ],
-                "id": 3564,
+                "id": 3488,
                 "name": "Block",
-                "src": "620:22:16"
+                "src": "620:22:15"
               }
             ],
-            "id": 3565,
+            "id": 3489,
             "name": "FunctionDefinition",
-            "src": "563:79:16"
+            "src": "563:79:15"
           },
           {
             "attributes": {
@@ -231,7 +231,7 @@
               ],
               "name": "upgradeFrom",
               "payable": false,
-              "scope": 3573,
+              "scope": 3497,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -243,7 +243,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_from",
-                      "scope": 3572,
+                      "scope": 3496,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -256,20 +256,20 @@
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 3566,
+                        "id": 3490,
                         "name": "ElementaryTypeName",
-                        "src": "667:7:16"
+                        "src": "667:7:15"
                       }
                     ],
-                    "id": 3567,
+                    "id": 3491,
                     "name": "VariableDeclaration",
-                    "src": "667:13:16"
+                    "src": "667:13:15"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "_value",
-                      "scope": 3572,
+                      "scope": 3496,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -282,19 +282,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 3568,
+                        "id": 3492,
                         "name": "ElementaryTypeName",
-                        "src": "682:7:16"
+                        "src": "682:7:15"
                       }
                     ],
-                    "id": 3569,
+                    "id": 3493,
                     "name": "VariableDeclaration",
-                    "src": "682:14:16"
+                    "src": "682:14:15"
                   }
                 ],
-                "id": 3570,
+                "id": 3494,
                 "name": "ParameterList",
-                "src": "666:31:16"
+                "src": "666:31:15"
               },
               {
                 "attributes": {
@@ -303,24 +303,24 @@
                   ]
                 },
                 "children": [],
-                "id": 3571,
+                "id": 3495,
                 "name": "ParameterList",
-                "src": "704:0:16"
+                "src": "704:0:15"
               }
             ],
-            "id": 3572,
+            "id": 3496,
             "name": "FunctionDefinition",
-            "src": "646:59:16"
+            "src": "646:59:15"
           }
         ],
-        "id": 3573,
+        "id": 3497,
         "name": "ContractDefinition",
-        "src": "479:229:16"
+        "src": "479:229:15"
       }
     ],
-    "id": 3574,
+    "id": 3498,
     "name": "SourceUnit",
-    "src": "237:472:16"
+    "src": "237:471:15"
   },
   "compiler": {
     "name": "solc",
@@ -328,5 +328,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-04T17:56:21.681Z"
+  "updatedAt": "2018-05-06T12:16:59.864Z"
 }

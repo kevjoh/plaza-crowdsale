@@ -92,10 +92,10 @@
       "type": "constructor"
     }
   ],
-  "bytecode": "0x606060405260008060006101000a81548160ff021916908315150217905550341561002957600080fd5b6040516020806102a28339810160405280805190602001909190505080600060016101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505061020c806100966000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630bf318a31461007d578063614cb9041461009257806382771c8e146100bf5780639c1e03a0146100ec578063cddaf24114610141578063f9cb6d7a14610164575b600080fd5b341561008857600080fd5b610090610191565b005b341561009d57600080fd5b6100a5610193565b604051808215151515815260200191505060405180910390f35b34156100ca57600080fd5b6100d261019c565b604051808215151515815260200191505060405180910390f35b34156100f757600080fd5b6100ff6101a5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561014c57600080fd5b61016260048080359060200190919050506101cb565b005b341561016f57600080fd5b6101776101ce565b604051808215151515815260200191505060405180910390f35b565b60006001905090565b60006001905090565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50565b6000809054906101000a900460ff16815600a165627a7a72305820d3a222b5a2063db7f16d41c33e6699d01429e8cde06c00765d05ae5d3de04ccb0029",
-  "deployedBytecode": "0x606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630bf318a31461007d578063614cb9041461009257806382771c8e146100bf5780639c1e03a0146100ec578063cddaf24114610141578063f9cb6d7a14610164575b600080fd5b341561008857600080fd5b610090610191565b005b341561009d57600080fd5b6100a5610193565b604051808215151515815260200191505060405180910390f35b34156100ca57600080fd5b6100d261019c565b604051808215151515815260200191505060405180910390f35b34156100f757600080fd5b6100ff6101a5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561014c57600080fd5b61016260048080359060200190919050506101cb565b005b341561016f57600080fd5b6101776101ce565b604051808215151515815260200191505060405180910390f35b565b60006001905090565b60006001905090565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50565b6000809054906101000a900460ff16815600a165627a7a72305820d3a222b5a2063db7f16d41c33e6699d01429e8cde06c00765d05ae5d3de04ccb0029",
-  "sourceMap": "434:500:9:-;;;518:5:2;475:48;;;;;;;;;;;;;;;;;;;;520:88:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;593:10;581:9;;:22;;;;;;;;;;;;;;;;;;520:88;434:500;;;;;;",
-  "deployedSourceMap": "434:500:9:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;890:41;;;;;;;;;;;;;;528:79:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;657:71:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;486:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;732:84;;;;;;;;;;;;;;;;;;;;;;;;;;475:48:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;890:41:9;:::o;528:79:2:-;579:4;598;591:11;;528:79;:::o;657:71:9:-;700:4;719;712:11;;657:71;:::o;486:29::-;;;;;;;;;;;;;:::o;732:84::-;;:::o;475:48:2:-;;;;;;;;;;;;;:::o",
+  "bytecode": "0x606060405260008060006101000a81548160ff021916908315150217905550341561002957600080fd5b6040516020806102a28339810160405280805190602001909190505080600060016101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505061020c806100966000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630bf318a31461007d578063614cb9041461009257806382771c8e146100bf5780639c1e03a0146100ec578063cddaf24114610141578063f9cb6d7a14610164575b600080fd5b341561008857600080fd5b610090610191565b005b341561009d57600080fd5b6100a5610193565b604051808215151515815260200191505060405180910390f35b34156100ca57600080fd5b6100d261019c565b604051808215151515815260200191505060405180910390f35b34156100f757600080fd5b6100ff6101a5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561014c57600080fd5b61016260048080359060200190919050506101cb565b005b341561016f57600080fd5b6101776101ce565b604051808215151515815260200191505060405180910390f35b565b60006001905090565b60006001905090565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50565b6000809054906101000a900460ff16815600a165627a7a72305820364cdecd5c87b17b688703561d45757440643ff7d3408426d9dfc30b4ec3b9750029",
+  "deployedBytecode": "0x606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630bf318a31461007d578063614cb9041461009257806382771c8e146100bf5780639c1e03a0146100ec578063cddaf24114610141578063f9cb6d7a14610164575b600080fd5b341561008857600080fd5b610090610191565b005b341561009d57600080fd5b6100a5610193565b604051808215151515815260200191505060405180910390f35b34156100ca57600080fd5b6100d261019c565b604051808215151515815260200191505060405180910390f35b34156100f757600080fd5b6100ff6101a5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561014c57600080fd5b61016260048080359060200190919050506101cb565b005b341561016f57600080fd5b6101776101ce565b604051808215151515815260200191505060405180910390f35b565b60006001905090565b60006001905090565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50565b6000809054906101000a900460ff16815600a165627a7a72305820364cdecd5c87b17b688703561d45757440643ff7d3408426d9dfc30b4ec3b9750029",
+  "sourceMap": "434:500:8:-;;;518:5:2;475:48;;;;;;;;;;;;;;;;;;;;520:88:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;593:10;581:9;;:22;;;;;;;;;;;;;;;;;;520:88;434:500;;;;;;",
+  "deployedSourceMap": "434:500:8:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;890:41;;;;;;;;;;;;;;528:79:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;657:71:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;486:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;732:84;;;;;;;;;;;;;;;;;;;;;;;;;;475:48:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;890:41:8;:::o;528:79:2:-;579:4;598;591:11;;528:79;:::o;657:71:8:-;700:4;719;712:11;;657:71;:::o;486:29::-;;;;;;;;;;;;;:::o;732:84::-;;:::o;475:48:2:-;;;;;;;;;;;;;:::o",
   "source": "/**\n * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net\n *\n * Licensed under the Apache License, version 2.0: https://github.com/TokenMarketNet/ico/blob/master/LICENSE.txt\n */\n\npragma solidity ^0.4.18;\n\nimport \"./CrowdsaleExt.sol\";\nimport \"./ReleasableToken.sol\";\n\n/**\n * A finalize agent that does nothing.\n *\n * - Token transfer must be manually released by the owner\n */\ncontract NullFinalizeAgentExt is FinalizeAgent {\n\n  CrowdsaleExt public crowdsale;\n\n  function NullFinalizeAgentExt(CrowdsaleExt _crowdsale) {\n    crowdsale = _crowdsale;\n  }\n\n  /** Check that we can release the token */\n  function isSane() public constant returns (bool) {\n    return true;\n  }\n\n  function distributeReservedTokens(uint reservedTokensDistributionBatch) public {\n  }\n\n  /** Called once by crowdsale finalize() if the sale was success. */\n  function finalizeCrowdsale() public {\n  }\n\n}",
   "sourcePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/NullFinalizeAgentExt.sol",
   "ast": {
@@ -103,7 +103,7 @@
       "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/NullFinalizeAgentExt.sol",
       "exportedSymbols": {
         "NullFinalizeAgentExt": [
-          2564
+          2489
         ]
       }
     },
@@ -117,54 +117,54 @@
             ".18"
           ]
         },
-        "id": 2529,
+        "id": 2454,
         "name": "PragmaDirective",
-        "src": "237:24:9"
+        "src": "237:24:8"
       },
       {
         "attributes": {
-          "SourceUnit": 1477,
+          "SourceUnit": 1458,
           "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/CrowdsaleExt.sol",
           "file": "./CrowdsaleExt.sol",
-          "scope": 2565,
+          "scope": 2490,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 2530,
+        "id": 2455,
         "name": "ImportDirective",
-        "src": "263:28:9"
+        "src": "263:28:8"
       },
       {
         "attributes": {
-          "SourceUnit": 2762,
+          "SourceUnit": 2687,
           "absolutePath": "/Users/kevinjohnson/Documents/GitHub/plaza-crowdsale/contracts/ReleasableToken.sol",
           "file": "./ReleasableToken.sol",
-          "scope": 2565,
+          "scope": 2490,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 2531,
+        "id": 2456,
         "name": "ImportDirective",
-        "src": "292:31:9"
+        "src": "292:31:8"
       },
       {
         "attributes": {
           "contractDependencies": [
-            1704
+            1686
           ],
           "contractKind": "contract",
           "documentation": "A finalize agent that does nothing.\n * - Token transfer must be manually released by the owner",
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            2564,
-            1704
+            2489,
+            1686
           ],
           "name": "NullFinalizeAgentExt",
-          "scope": 2565
+          "scope": 2490
         },
         "children": [
           {
@@ -178,23 +178,23 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "FinalizeAgent",
-                  "referencedDeclaration": 1704,
+                  "referencedDeclaration": 1686,
                   "type": "contract FinalizeAgent"
                 },
-                "id": 2532,
+                "id": 2457,
                 "name": "UserDefinedTypeName",
-                "src": "467:13:9"
+                "src": "467:13:8"
               }
             ],
-            "id": 2533,
+            "id": 2458,
             "name": "InheritanceSpecifier",
-            "src": "467:13:9"
+            "src": "467:13:8"
           },
           {
             "attributes": {
               "constant": false,
               "name": "crowdsale",
-              "scope": 2564,
+              "scope": 2489,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "contract CrowdsaleExt",
@@ -206,17 +206,17 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "CrowdsaleExt",
-                  "referencedDeclaration": 1476,
+                  "referencedDeclaration": 1457,
                   "type": "contract CrowdsaleExt"
                 },
-                "id": 2534,
+                "id": 2459,
                 "name": "UserDefinedTypeName",
-                "src": "486:12:9"
+                "src": "486:12:8"
               }
             ],
-            "id": 2535,
+            "id": 2460,
             "name": "VariableDeclaration",
-            "src": "486:29:9"
+            "src": "486:29:8"
           },
           {
             "attributes": {
@@ -228,7 +228,7 @@
               ],
               "name": "NullFinalizeAgentExt",
               "payable": false,
-              "scope": 2564,
+              "scope": 2489,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -240,7 +240,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_crowdsale",
-                      "scope": 2545,
+                      "scope": 2470,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "contract CrowdsaleExt",
@@ -252,22 +252,22 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "CrowdsaleExt",
-                          "referencedDeclaration": 1476,
+                          "referencedDeclaration": 1457,
                           "type": "contract CrowdsaleExt"
                         },
-                        "id": 2536,
+                        "id": 2461,
                         "name": "UserDefinedTypeName",
-                        "src": "550:12:9"
+                        "src": "550:12:8"
                       }
                     ],
-                    "id": 2537,
+                    "id": 2462,
                     "name": "VariableDeclaration",
-                    "src": "550:23:9"
+                    "src": "550:23:8"
                   }
                 ],
-                "id": 2538,
+                "id": 2463,
                 "name": "ParameterList",
-                "src": "549:25:9"
+                "src": "549:25:8"
               },
               {
                 "attributes": {
@@ -276,9 +276,9 @@
                   ]
                 },
                 "children": [],
-                "id": 2539,
+                "id": 2464,
                 "name": "ParameterList",
-                "src": "575:0:9"
+                "src": "575:0:8"
               },
               {
                 "children": [
@@ -301,13 +301,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2535,
+                              "referencedDeclaration": 2460,
                               "type": "contract CrowdsaleExt",
                               "value": "crowdsale"
                             },
-                            "id": 2540,
+                            "id": 2465,
                             "name": "Identifier",
-                            "src": "581:9:9"
+                            "src": "581:9:8"
                           },
                           {
                             "attributes": {
@@ -315,33 +315,33 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2537,
+                              "referencedDeclaration": 2462,
                               "type": "contract CrowdsaleExt",
                               "value": "_crowdsale"
                             },
-                            "id": 2541,
+                            "id": 2466,
                             "name": "Identifier",
-                            "src": "593:10:9"
+                            "src": "593:10:8"
                           }
                         ],
-                        "id": 2542,
+                        "id": 2467,
                         "name": "Assignment",
-                        "src": "581:22:9"
+                        "src": "581:22:8"
                       }
                     ],
-                    "id": 2543,
+                    "id": 2468,
                     "name": "ExpressionStatement",
-                    "src": "581:22:9"
+                    "src": "581:22:8"
                   }
                 ],
-                "id": 2544,
+                "id": 2469,
                 "name": "Block",
-                "src": "575:33:9"
+                "src": "575:33:8"
               }
             ],
-            "id": 2545,
+            "id": 2470,
             "name": "FunctionDefinition",
-            "src": "520:88:9"
+            "src": "520:88:8"
           },
           {
             "attributes": {
@@ -353,9 +353,9 @@
               ],
               "name": "isSane",
               "payable": false,
-              "scope": 2564,
+              "scope": 2489,
               "stateMutability": "view",
-              "superFunction": 1695,
+              "superFunction": 1677,
               "visibility": "public"
             },
             "children": [
@@ -366,9 +366,9 @@
                   ]
                 },
                 "children": [],
-                "id": 2546,
+                "id": 2471,
                 "name": "ParameterList",
-                "src": "672:2:9"
+                "src": "672:2:8"
               },
               {
                 "children": [
@@ -376,7 +376,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 2553,
+                      "scope": 2478,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -389,25 +389,25 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 2547,
+                        "id": 2472,
                         "name": "ElementaryTypeName",
-                        "src": "700:4:9"
+                        "src": "700:4:8"
                       }
                     ],
-                    "id": 2548,
+                    "id": 2473,
                     "name": "VariableDeclaration",
-                    "src": "700:4:9"
+                    "src": "700:4:8"
                   }
                 ],
-                "id": 2549,
+                "id": 2474,
                 "name": "ParameterList",
-                "src": "699:6:9"
+                "src": "699:6:8"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 2549
+                      "functionReturnParameters": 2474
                     },
                     "children": [
                       {
@@ -423,24 +423,24 @@
                           "type": "bool",
                           "value": "true"
                         },
-                        "id": 2550,
+                        "id": 2475,
                         "name": "Literal",
-                        "src": "719:4:9"
+                        "src": "719:4:8"
                       }
                     ],
-                    "id": 2551,
+                    "id": 2476,
                     "name": "Return",
-                    "src": "712:11:9"
+                    "src": "712:11:8"
                   }
                 ],
-                "id": 2552,
+                "id": 2477,
                 "name": "Block",
-                "src": "706:22:9"
+                "src": "706:22:8"
               }
             ],
-            "id": 2553,
+            "id": 2478,
             "name": "FunctionDefinition",
-            "src": "657:71:9"
+            "src": "657:71:8"
           },
           {
             "attributes": {
@@ -452,9 +452,9 @@
               ],
               "name": "distributeReservedTokens",
               "payable": false,
-              "scope": 2564,
+              "scope": 2489,
               "stateMutability": "nonpayable",
-              "superFunction": 1700,
+              "superFunction": 1682,
               "visibility": "public"
             },
             "children": [
@@ -464,7 +464,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "reservedTokensDistributionBatch",
-                      "scope": 2559,
+                      "scope": 2484,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -477,19 +477,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 2554,
+                        "id": 2479,
                         "name": "ElementaryTypeName",
-                        "src": "766:4:9"
+                        "src": "766:4:8"
                       }
                     ],
-                    "id": 2555,
+                    "id": 2480,
                     "name": "VariableDeclaration",
-                    "src": "766:36:9"
+                    "src": "766:36:8"
                   }
                 ],
-                "id": 2556,
+                "id": 2481,
                 "name": "ParameterList",
-                "src": "765:38:9"
+                "src": "765:38:8"
               },
               {
                 "attributes": {
@@ -498,9 +498,9 @@
                   ]
                 },
                 "children": [],
-                "id": 2557,
+                "id": 2482,
                 "name": "ParameterList",
-                "src": "811:0:9"
+                "src": "811:0:8"
               },
               {
                 "attributes": {
@@ -509,14 +509,14 @@
                   ]
                 },
                 "children": [],
-                "id": 2558,
+                "id": 2483,
                 "name": "Block",
-                "src": "811:5:9"
+                "src": "811:5:8"
               }
             ],
-            "id": 2559,
+            "id": 2484,
             "name": "FunctionDefinition",
-            "src": "732:84:9"
+            "src": "732:84:8"
           },
           {
             "attributes": {
@@ -528,9 +528,9 @@
               ],
               "name": "finalizeCrowdsale",
               "payable": false,
-              "scope": 2564,
+              "scope": 2489,
               "stateMutability": "nonpayable",
-              "superFunction": 1703,
+              "superFunction": 1685,
               "visibility": "public"
             },
             "children": [
@@ -541,9 +541,9 @@
                   ]
                 },
                 "children": [],
-                "id": 2560,
+                "id": 2485,
                 "name": "ParameterList",
-                "src": "916:2:9"
+                "src": "916:2:8"
               },
               {
                 "attributes": {
@@ -552,9 +552,9 @@
                   ]
                 },
                 "children": [],
-                "id": 2561,
+                "id": 2486,
                 "name": "ParameterList",
-                "src": "926:0:9"
+                "src": "926:0:8"
               },
               {
                 "attributes": {
@@ -563,24 +563,24 @@
                   ]
                 },
                 "children": [],
-                "id": 2562,
+                "id": 2487,
                 "name": "Block",
-                "src": "926:5:9"
+                "src": "926:5:8"
               }
             ],
-            "id": 2563,
+            "id": 2488,
             "name": "FunctionDefinition",
-            "src": "890:41:9"
+            "src": "890:41:8"
           }
         ],
-        "id": 2564,
+        "id": 2489,
         "name": "ContractDefinition",
-        "src": "434:500:9"
+        "src": "434:500:8"
       }
     ],
-    "id": 2565,
+    "id": 2490,
     "name": "SourceUnit",
-    "src": "237:697:9"
+    "src": "237:697:8"
   },
   "compiler": {
     "name": "solc",
@@ -588,5 +588,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-04T17:56:21.673Z"
+  "updatedAt": "2018-05-06T12:16:59.848Z"
 }

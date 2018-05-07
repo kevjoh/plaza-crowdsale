@@ -6,14 +6,13 @@
 
 pragma solidity ^0.4.18;
 
-import "./SafeMathLibExt.sol";
-import "./PricingStrategy.sol";
 import "zeppelin-solidity/contracts/ownership/Ownable.sol";
+import "./PricingStrategy.sol";
+import "./SafeMathLibExt.sol";
 
 /**
  * Fixed crowdsale pricing - everybody gets the same price.
  */
-
 contract FlatPricingExt is PricingStrategy, Ownable {
   using SafeMathLibExt for uint;
 

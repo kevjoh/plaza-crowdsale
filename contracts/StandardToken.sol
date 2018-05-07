@@ -6,8 +6,8 @@
 
 pragma solidity ^0.4.18;
 
-import "./SafeMath.sol";
 import "zeppelin-solidity/contracts/token/ERC20.sol";
+import "./SafeMath.sol";
 
 /**
  * Standard ERC20 token with Short Hand Attack and approve() race condition mitigation.
